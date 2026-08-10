@@ -41,6 +41,11 @@ class SignUpViewController: UIViewController {
         configureVerificationCheckButton()
         
         emailVerificationStackView.isHidden = true
+        
+        configurePasswordContainer()
+        configurePasswordToggleButton()
+        configurePasswordConfirmContainer()
+        configurePasswordConfirmToggleButton()
     }
     
     // ==============
@@ -77,9 +82,14 @@ class SignUpViewController: UIViewController {
     }
     
     private func configureIdContainer() {
-        idContainerView.layer.cornerRadius = 12
+        idContainerView.layer.cornerRadius = 10
         idContainerView.layer.borderWidth = 1
-        idContainerView.layer.borderColor = UIColor.systemGray5.cgColor
+        idContainerView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
     }
     
     private func configureIdTextField() {
@@ -197,9 +207,14 @@ class SignUpViewController: UIViewController {
     }
     
     private func configureEmailContainer() {
-        emailContainerView.layer.cornerRadius = 12
+        emailContainerView.layer.cornerRadius = 10
         emailContainerView.layer.borderWidth = 1
-        emailContainerView.layer.borderColor = UIColor.systemGray5.cgColor
+        emailContainerView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
     }
 
     private func configureEmailTextField() {
@@ -316,15 +331,25 @@ class SignUpViewController: UIViewController {
     }
     
     private func configureVerificationContainer() {
-        verificationContainerView.layer.cornerRadius = 12
+        verificationContainerView.layer.cornerRadius = 10
         verificationContainerView.layer.borderWidth = 1
-        verificationContainerView.layer.borderColor = UIColor.systemGray5.cgColor
+        verificationContainerView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
     }
     
     private func configureVerificationInputView() {
-        verificationInputView.layer.cornerRadius = 12
+        verificationInputView.layer.cornerRadius = 10
         verificationInputView.layer.borderWidth = 1
-        verificationInputView.layer.borderColor = UIColor.systemGray5.cgColor
+        verificationInputView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
     }
     
     private func configureVerificationCheckButton() {
@@ -463,5 +488,112 @@ class SignUpViewController: UIViewController {
         verificationGuideLabel.text = "이메일 인증이 완료되었습니다."
         verificationGuideLabel.textColor = .systemGreen
     }
+    
+    // ====================
+    // MARK: Password Field
+    // ====================
+    @IBOutlet weak var passwordContainerView: UIView!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordToggleButton: UIButton!
+    
+    @IBOutlet weak var passwordConfirmContainerView: UIView!
+    @IBOutlet weak var passwordConfirmTextField: UITextField!
+    @IBOutlet weak var passwordConfirmToggleButton: UIButton!
+    
+    
+    @IBAction func didTapPasswordToggleButton(_ sender: UIButton) {
+        passwordTextField.isSecureTextEntry.toggle()
+        
+        let imageName = passwordTextField.isSecureTextEntry ? "eye" : "eye.slash"
+        
+        let config = UIImage.SymbolConfiguration(
+            pointSize: 15,
+            weight: .light
+        )
+        
+        sender.setImage(
+            UIImage(systemName: imageName, withConfiguration: config),
+            for: .normal
+        )
+    }
+    
+    @IBAction func didTapPasswordConfirmToggleButton(_ sender: UIButton) {
+        passwordConfirmTextField.isSecureTextEntry.toggle()
+        
+        let imageName = passwordConfirmTextField.isSecureTextEntry ? "eye" : "eye.slash"
+        
+        let config = UIImage.SymbolConfiguration(
+            pointSize: 15,
+            weight: .light
+        )
+        
+        sender.setImage(
+            UIImage(systemName: imageName, withConfiguration: config),
+            for: .normal
+        )
+    }
+    
+    private func configurePasswordContainer() {
+        passwordContainerView.layer.cornerRadius = 10
+        passwordContainerView.layer.borderWidth = 1
+        passwordContainerView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
+    }
+    
+    private func configurePasswordConfirmContainer() {
+        passwordConfirmContainerView.layer.cornerRadius = 10
+        passwordConfirmContainerView.layer.borderWidth = 1
+        passwordConfirmContainerView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
+    }
+    
+    private func configurePasswordToggleButton() {
+        let config = UIImage.SymbolConfiguration(
+            pointSize: 15,
+            weight: .light
+        )
+        
+        let image = UIImage(
+            systemName: "eye",
+            withConfiguration: config
+        )
+        
+        passwordToggleButton.setImage(image, for: .normal)
+        passwordToggleButton.tintColor = UIColor(
+            red: 180 / 255,
+            green: 190 / 255,
+            blue: 207 / 255,
+            alpha: 1
+        )
+    }
+    
+    private func configurePasswordConfirmToggleButton() {
+        let config = UIImage.SymbolConfiguration(
+            pointSize: 15,
+            weight: .light
+        )
+        
+        let image = UIImage(
+            systemName: "eye",
+            withConfiguration: config
+        )
+        
+        passwordConfirmToggleButton.setImage(image, for: .normal)
+        passwordConfirmToggleButton.tintColor = UIColor(
+            red: 180 / 255,
+            green: 190 / 255,
+            blue: 207 / 255,
+            alpha: 1
+        )
+    }
+    
     
 }

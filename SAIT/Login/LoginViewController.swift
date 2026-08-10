@@ -155,7 +155,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         // 버튼 디자인
         button.backgroundColor = backgroundColor
-        button.layer.cornerRadius = 12
+        button.layer.cornerRadius = 10
         button.clipsToBounds = true
 
         // 아이콘
@@ -460,7 +460,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         )
         
         // 모서리
-        loginButton.layer.cornerRadius = 12
+        loginButton.layer.cornerRadius = 10
         loginButton.clipsToBounds = true
     }
     

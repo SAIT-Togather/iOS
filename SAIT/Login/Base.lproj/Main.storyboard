@@ -353,10 +353,10 @@
                                 <rect key="frame" x="0.0" y="178" width="402" height="628"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwP-Ye-nGq" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="538.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="674.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HVP-wS-uhD" userLabel="Main Stack View">
-                                                <rect key="frame" x="24" y="15.999999999999972" width="354" height="506.33333333333326"/>
+                                                <rect key="frame" x="24" y="16" width="354" height="642.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="DaO-GQ-7bL" userLabel="Header Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="182.33333333333334"/>
@@ -598,6 +598,99 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="e7b-2d-rEf" userLabel="Password Stack View">
+                                                        <rect key="frame" x="0.0" y="522.33333333333337" width="354" height="52"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGL-mW-Jcu" userLabel="Password Container View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-q9-2pI">
+                                                                        <rect key="frame" x="16" y="17" width="20" height="18"/>
+                                                                        <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="Ax4-xw-dhi"/>
+                                                                            <constraint firstAttribute="width" constant="20" id="QCP-MY-rML"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="70z-AD-gI8" userLabel="Password Text Field">
+                                                                        <rect key="frame" x="48" y="16" width="242" height="20"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                    </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRX-RF-g3k" userLabel="Eye Button">
+                                                                        <rect key="frame" x="298" y="4" width="44" height="44"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="44" id="F4z-wX-iX5"/>
+                                                                            <constraint firstAttribute="width" constant="44" id="zOI-1Y-F3t"/>
+                                                                        </constraints>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" image="eye" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="didTapPasswordToggleButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="Me5-4b-34h"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="52" id="A5m-fU-qJI"/>
+                                                                    <constraint firstItem="70z-AD-gI8" firstAttribute="leading" secondItem="fd6-q9-2pI" secondAttribute="trailing" constant="12" id="IC2-X4-PDK"/>
+                                                                    <constraint firstItem="gRX-RF-g3k" firstAttribute="leading" secondItem="70z-AD-gI8" secondAttribute="trailing" constant="8" id="Mtq-jX-CKY"/>
+                                                                    <constraint firstItem="fd6-q9-2pI" firstAttribute="leading" secondItem="FGL-mW-Jcu" secondAttribute="leading" constant="16" id="PqX-Rh-X6I"/>
+                                                                    <constraint firstItem="fd6-q9-2pI" firstAttribute="centerY" secondItem="FGL-mW-Jcu" secondAttribute="centerY" id="f9i-gT-5hx"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gRX-RF-g3k" secondAttribute="trailing" constant="12" id="gBp-f5-Mtj"/>
+                                                                    <constraint firstItem="gRX-RF-g3k" firstAttribute="centerY" secondItem="FGL-mW-Jcu" secondAttribute="centerY" id="qMa-K3-May"/>
+                                                                    <constraint firstItem="70z-AD-gI8" firstAttribute="centerY" secondItem="FGL-mW-Jcu" secondAttribute="centerY" id="v9n-nb-Ini"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="dmJ-7D-aRv" userLabel="Password Confirm Stack View">
+                                                        <rect key="frame" x="0.0" y="590.33333333333337" width="354" height="52"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYH-X7-ZBf" userLabel="Password Confirm Container View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ldp-xI-kXs">
+                                                                        <rect key="frame" x="16" y="17" width="20" height="18"/>
+                                                                        <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="9E5-5M-LSl"/>
+                                                                            <constraint firstAttribute="width" constant="20" id="efv-Lb-EFb"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 다시 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1yr-YY-BTO" userLabel="Password Confirm Text Field">
+                                                                        <rect key="frame" x="48" y="16" width="242" height="20"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                    </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuM-bl-Wb3" userLabel="Confirm Eye Button">
+                                                                        <rect key="frame" x="298" y="4" width="44" height="44"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="44" id="3G0-sz-FQ9"/>
+                                                                            <constraint firstAttribute="height" constant="44" id="Epp-l2-jzT"/>
+                                                                        </constraints>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" image="eye" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="didTapPasswordConfirmToggleButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="hyZ-uJ-iJi"/>
+                                                                            <action selector="didTapPasswordToggleButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="SXF-ak-2Vl"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="1yr-YY-BTO" firstAttribute="leading" secondItem="ldp-xI-kXs" secondAttribute="trailing" constant="12" id="7oo-ql-CLg"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="AuM-bl-Wb3" secondAttribute="trailing" constant="12" id="ArG-cv-xU8"/>
+                                                                    <constraint firstItem="ldp-xI-kXs" firstAttribute="leading" secondItem="LYH-X7-ZBf" secondAttribute="leading" constant="16" id="Tbh-DV-88g"/>
+                                                                    <constraint firstItem="ldp-xI-kXs" firstAttribute="centerY" secondItem="LYH-X7-ZBf" secondAttribute="centerY" id="cYO-AG-qpE"/>
+                                                                    <constraint firstItem="1yr-YY-BTO" firstAttribute="centerY" secondItem="LYH-X7-ZBf" secondAttribute="centerY" id="dF1-n9-Nwg"/>
+                                                                    <constraint firstItem="AuM-bl-Wb3" firstAttribute="centerY" secondItem="LYH-X7-ZBf" secondAttribute="centerY" id="f65-Dg-zvc"/>
+                                                                    <constraint firstAttribute="height" constant="52" id="hzx-re-Ayz"/>
+                                                                    <constraint firstItem="AuM-bl-Wb3" firstAttribute="leading" secondItem="1yr-YY-BTO" secondAttribute="trailing" constant="8" id="mtY-Ok-zDZ"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -641,6 +734,12 @@
                         <outlet property="idContainerView" destination="GSr-AM-LbE" id="qXq-4e-ss5"/>
                         <outlet property="idGuideLabel" destination="RRA-L2-CUK" id="TKr-Vs-UHM"/>
                         <outlet property="idTextField" destination="sih-9C-hXz" id="WxJ-nf-ErR"/>
+                        <outlet property="passwordConfirmContainerView" destination="LYH-X7-ZBf" id="vfa-eu-hvb"/>
+                        <outlet property="passwordConfirmTextField" destination="1yr-YY-BTO" id="8nS-oT-QVy"/>
+                        <outlet property="passwordConfirmToggleButton" destination="AuM-bl-Wb3" id="LXn-gV-P7P"/>
+                        <outlet property="passwordContainerView" destination="FGL-mW-Jcu" id="KZI-sq-dT5"/>
+                        <outlet property="passwordTextField" destination="70z-AD-gI8" id="qEd-Qc-3uC"/>
+                        <outlet property="passwordToggleButton" destination="gRX-RF-g3k" id="T7X-T4-kgs"/>
                         <outlet property="verificationCheckButton" destination="Eda-sE-YIw" id="gFq-dr-zan"/>
                         <outlet property="verificationContainerView" destination="2Ep-Wv-3Zo" id="bL3-h6-5UI"/>
                         <outlet property="verificationGuideLabel" destination="01y-TF-lKL" id="rfg-lG-MLg"/>
@@ -674,6 +773,8 @@
     </scenes>
     <resources>
         <image name="envelope" catalog="system" width="128" height="85"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
+        <image name="lock" catalog="system" width="111" height="128"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="saitLogo" width="1254" height="1254"/>
         <systemColor name="opaqueSeparatorColor">
