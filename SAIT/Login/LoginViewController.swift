@@ -26,7 +26,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     /// 2026.08.08
     /// 화면이 남아도 스크롤바가 생기는 문제때문에 테스트 할때 사용
     /// 현재는 아래의 코드가 없어도 스토리보드에서 크기 및 Auto Layout 을 조정했기 때문에 문제없음
-    /// 
     /*override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
