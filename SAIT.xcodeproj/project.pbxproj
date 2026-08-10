@@ -6,30 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB36ED3001215900182A0E /* AppDelegate.swift */; };
+		D3EB36F93001215900182A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB36F53001215900182A0E /* SceneDelegate.swift */; };
+		D3EB36FB3001215900182A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EB36EE3001215900182A0E /* Assets.xcassets */; };
+		D3EB36FD3001215900182A0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EB36F13001215900182A0E /* LaunchScreen.storyboard */; };
+		D3EB36FE3001215900182A0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EB36F33001215900182A0E /* Main.storyboard */; };
+		D3EB36FF3001215900182A0E /* SAIT_appIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = D3EB36F43001215900182A0E /* SAIT_appIcon.icon */; };
+		D3EB37033001265C00182A0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB37023001265C00182A0E /* LoginViewController.swift */; };
+		D3EB370530013A5A00182A0E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB370430013A5A00182A0E /* SignUpViewController.swift */; };
+		D3EB370730013C5500182A0E /* FindIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB370630013C5500182A0E /* FindIDViewController.swift */; };
+		D3EB370930013C5E00182A0E /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB370830013C5E00182A0E /* FindPasswordViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D3EB36C33001203100182A0E /* SAIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EB36ED3001215900182A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3EB36EE3001215900182A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3EB36EF3001215900182A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3EB36F03001215900182A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3EB36F23001215900182A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3EB36F43001215900182A0E /* SAIT_appIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = SAIT_appIcon.icon; sourceTree = "<group>"; };
+		D3EB36F53001215900182A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D3EB37023001265C00182A0E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D3EB370430013A5A00182A0E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D3EB370630013C5500182A0E /* FindIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDViewController.swift; sourceTree = "<group>"; };
+		D3EB370830013C5E00182A0E /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D3EB36D53001203200182A0E /* Exceptions for "SAIT" folder in "SAIT" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = D3EB36C23001203100182A0E /* SAIT */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		D3EB36C53001203100182A0E /* SAIT */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				D3EB36D53001203200182A0E /* Exceptions for "SAIT" folder in "SAIT" target */,
-			);
-			path = SAIT;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D3EB36C03001203100182A0E /* Frameworks */ = {
@@ -45,7 +48,7 @@
 		D3EB36BA3001203100182A0E = {
 			isa = PBXGroup;
 			children = (
-				D3EB36C53001203100182A0E /* SAIT */,
+				D3EB36F73001215900182A0E /* SAIT */,
 				D3EB36C43001203100182A0E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +59,32 @@
 				D3EB36C33001203100182A0E /* SAIT.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D3EB36F73001215900182A0E /* SAIT */ = {
+			isa = PBXGroup;
+			children = (
+				D3EB36ED3001215900182A0E /* AppDelegate.swift */,
+				D3EB36F33001215900182A0E /* Main.storyboard */,
+				D3EB37023001265C00182A0E /* LoginViewController.swift */,
+				D3EB370430013A5A00182A0E /* SignUpViewController.swift */,
+				D3EB370630013C5500182A0E /* FindIDViewController.swift */,
+				D3EB370830013C5E00182A0E /* FindPasswordViewController.swift */,
+				D3EB36F13001215900182A0E /* LaunchScreen.storyboard */,
+				D3EB36F53001215900182A0E /* SceneDelegate.swift */,
+				D3EB36EF3001215900182A0E /* Info.plist */,
+				D3EB37003001221000182A0E /* Resource */,
+			);
+			path = SAIT;
+			sourceTree = "<group>";
+		};
+		D3EB37003001221000182A0E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D3EB36F43001215900182A0E /* SAIT_appIcon.icon */,
+				D3EB36EE3001215900182A0E /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +101,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				D3EB36C53001203100182A0E /* SAIT */,
 			);
 			name = SAIT;
 			packageProductDependencies = (
@@ -122,6 +148,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EB36FB3001215900182A0E /* Assets.xcassets in Resources */,
+				D3EB36FD3001215900182A0E /* LaunchScreen.storyboard in Resources */,
+				D3EB36FE3001215900182A0E /* Main.storyboard in Resources */,
+				D3EB36FF3001215900182A0E /* SAIT_appIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,16 +162,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EB370730013C5500182A0E /* FindIDViewController.swift in Sources */,
+				D3EB37033001265C00182A0E /* LoginViewController.swift in Sources */,
+				D3EB370930013C5E00182A0E /* FindPasswordViewController.swift in Sources */,
+				D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */,
+				D3EB36F93001215900182A0E /* SceneDelegate.swift in Sources */,
+				D3EB370530013A5A00182A0E /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D3EB36F13001215900182A0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3EB36F03001215900182A0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D3EB36F33001215900182A0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3EB36F23001215900182A0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		D3EB36D73001203200182A0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SAIT_appIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -158,7 +213,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpacaive.SAIT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meaninglab.sait;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -173,7 +228,7 @@
 		D3EB36D83001203200182A0E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SAIT_appIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -190,7 +245,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpacaive.SAIT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meaninglab.sait;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
