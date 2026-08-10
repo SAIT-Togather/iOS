@@ -353,10 +353,10 @@
                                 <rect key="frame" x="0.0" y="178" width="402" height="628"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwP-Ye-nGq" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="742.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="810.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HVP-wS-uhD" userLabel="Main Stack View">
-                                                <rect key="frame" x="24" y="16" width="354" height="710.33333333333337"/>
+                                                <rect key="frame" x="24" y="16" width="354" height="778.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="DaO-GQ-7bL" userLabel="Header Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="182.33333333333334"/>
@@ -673,7 +673,6 @@
                                                                         <state key="normal" image="eye" catalog="system"/>
                                                                         <connections>
                                                                             <action selector="didTapPasswordConfirmToggleButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="hyZ-uJ-iJi"/>
-                                                                            <action selector="didTapPasswordToggleButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="SXF-ak-2Vl"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -723,6 +722,52 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="scx-CV-xgL" userLabel="Birth Stack View">
+                                                        <rect key="frame" x="0.0" y="726.33333333333337" width="354" height="52"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkM-nm-t9r" userLabel="Birth Container View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthday.cake" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t9R-8p-09U">
+                                                                        <rect key="frame" x="16" y="15.666666666666668" width="20" height="20.666666666666661"/>
+                                                                        <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="NRA-dZ-XGK"/>
+                                                                            <constraint firstAttribute="width" constant="20" id="crr-hp-1Mi"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일을 선택해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E83-ZS-fNy" userLabel="Birth Text Field">
+                                                                        <rect key="frame" x="48" y="15" width="242" height="22"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-gP-cxO" userLabel="Birth Button">
+                                                                        <rect key="frame" x="298" y="4" width="44" height="44"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="44" id="77w-SK-2IF"/>
+                                                                            <constraint firstAttribute="height" constant="44" id="Ax3-6y-DJ8"/>
+                                                                        </constraints>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" image="calendar" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="didTapBirthButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="W8s-gp-ywe"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="E83-ZS-fNy" firstAttribute="centerY" secondItem="fkM-nm-t9r" secondAttribute="centerY" id="OBp-Cc-ncC"/>
+                                                                    <constraint firstAttribute="height" constant="52" id="PX3-cK-efa"/>
+                                                                    <constraint firstItem="E83-ZS-fNy" firstAttribute="leading" secondItem="t9R-8p-09U" secondAttribute="trailing" constant="12" id="XyL-qf-HiX"/>
+                                                                    <constraint firstItem="XcQ-gP-cxO" firstAttribute="leading" secondItem="E83-ZS-fNy" secondAttribute="trailing" constant="8" id="Z3O-rv-kSm"/>
+                                                                    <constraint firstItem="XcQ-gP-cxO" firstAttribute="centerY" secondItem="fkM-nm-t9r" secondAttribute="centerY" id="bS8-Rz-Mhq"/>
+                                                                    <constraint firstItem="t9R-8p-09U" firstAttribute="centerY" secondItem="fkM-nm-t9r" secondAttribute="centerY" id="oBJ-XU-443"/>
+                                                                    <constraint firstItem="t9R-8p-09U" firstAttribute="leading" secondItem="fkM-nm-t9r" secondAttribute="leading" constant="16" id="qzL-ZR-ZJf"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="XcQ-gP-cxO" secondAttribute="trailing" constant="12" id="uXr-MQ-M6j"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -757,6 +802,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="YJ8-t8-J94"/>
                     <connections>
+                        <outlet property="birthButton" destination="XcQ-gP-cxO" id="KOk-AV-jsu"/>
+                        <outlet property="birthContainerView" destination="fkM-nm-t9r" id="uxs-rU-uOG"/>
+                        <outlet property="birthTextField" destination="E83-ZS-fNy" id="Maj-gT-uhc"/>
                         <outlet property="emailCheckButton" destination="hkS-pD-flL" id="tPq-7G-RaM"/>
                         <outlet property="emailContainerView" destination="pa5-lG-3bj" id="I52-9V-JRp"/>
                         <outlet property="emailGuideLabel" destination="qKZ-lA-MUZ" id="ZU5-q3-h40"/>
@@ -767,6 +815,7 @@
                         <outlet property="idGuideLabel" destination="RRA-L2-CUK" id="TKr-Vs-UHM"/>
                         <outlet property="idTextField" destination="sih-9C-hXz" id="WxJ-nf-ErR"/>
                         <outlet property="nicknameContainerView" destination="WNV-vW-Ovu" id="Z8s-lw-Ek9"/>
+                        <outlet property="nicknameTextField" destination="61M-C3-PP6" id="sLv-Rx-s3j"/>
                         <outlet property="passwordConfirmContainerView" destination="LYH-X7-ZBf" id="vfa-eu-hvb"/>
                         <outlet property="passwordConfirmTextField" destination="1yr-YY-BTO" id="8nS-oT-QVy"/>
                         <outlet property="passwordConfirmToggleButton" destination="AuM-bl-Wb3" id="LXn-gV-P7P"/>
@@ -805,6 +854,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="birthday.cake" catalog="system" width="128" height="115"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="envelope" catalog="system" width="128" height="85"/>
         <image name="eye" catalog="system" width="128" height="79"/>
         <image name="lock" catalog="system" width="111" height="128"/>

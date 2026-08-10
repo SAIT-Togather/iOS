@@ -13,13 +13,14 @@ class SignUpViewController: UIViewController {
     private var verificationTimer: Timer?
     private var verificationTimerLeft = 300
     private var isEmailVerified = false
+    private let birthDatePicker = UIDatePicker()
     
     // =========================
     // MARK: View LifeCycle Func
     // =========================
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureUI()
     }
     
@@ -48,6 +49,11 @@ class SignUpViewController: UIViewController {
         configurePasswordConfirmToggleButton()
         
         configureNicknameContainer()
+        configureNickNameTextField()
+        
+        configureBirthContainer()
+        configureBirthTextField()
+        configureBirthButton()
     }
     
     // ==============
@@ -218,15 +224,15 @@ class SignUpViewController: UIViewController {
             alpha: 1
         ).cgColor
     }
-
+    
     private func configureEmailTextField() {
         emailTextField.borderStyle = .none
         emailTextField.font = .systemFont(ofSize: 16)
         emailTextField.textColor = .label
-
+        
         emailTextField.autocorrectionType = .no
         emailTextField.autocapitalizationType = .none
-
+        
         emailTextField.keyboardType = .emailAddress
         emailTextField.textContentType = .emailAddress
         emailTextField.returnKeyType = .done
@@ -237,7 +243,7 @@ class SignUpViewController: UIViewController {
             for: .editingChanged
         )
     }
-
+    
     private func configureEmailCheckButton() {
         emailCheckButton.layer.cornerRadius = 8
         emailCheckButton.layer.borderWidth = 1
@@ -247,7 +253,7 @@ class SignUpViewController: UIViewController {
             blue: 0.302,
             alpha: 1
         ).cgColor
-
+        
         emailCheckButton.setTitleColor(
             UIColor(
                 red: 0.055,
@@ -257,7 +263,7 @@ class SignUpViewController: UIViewController {
             ),
             for: .normal
         )
-
+        
         emailCheckButton.titleLabel?.font = .systemFont(
             ofSize: 14,
             weight: .semibold
@@ -277,12 +283,12 @@ class SignUpViewController: UIViewController {
         emailGuideLabel.text = "이메일 주소를 입력해주세요"
         emailGuideLabel.textColor = .secondaryLabel
     }
-
+    
     private func showEmailFormatError() {
         emailGuideLabel.text = "올바른 이메일 주소를 입력해주세요."
         emailGuideLabel.textColor = .systemRed
     }
-
+    
     private func showEmailCodeSent() {
         emailGuideLabel.text = "인증번호를 전송했습니다."
         emailGuideLabel.textColor = .systemGreen
@@ -444,22 +450,22 @@ class SignUpViewController: UIViewController {
         verificationGuideLabel.text = "인증번호를 입력해주세요."
         verificationGuideLabel.textColor = .systemRed
     }
-
+    
     private func showVerificationFormatError() {
         verificationGuideLabel.text = "인증번호 6자리를 입력해주세요."
         verificationGuideLabel.textColor = .systemRed
     }
-
+    
     private func showVerificationFailure() {
         verificationGuideLabel.text = "인증번호가 올바르지 않습니다."
         verificationGuideLabel.textColor = .systemRed
     }
-
+    
     private func showVerificationExpired() {
         verificationGuideLabel.text = "인증 시간이 만료되었습니다."
         verificationGuideLabel.textColor = .systemRed
     }
-
+    
     private func showVerificationSuccess() {
         verificationTimer?.invalidate()
         verificationTimer = nil
@@ -483,7 +489,7 @@ class SignUpViewController: UIViewController {
         attachment.image = image
         
         verificationTimerLabel.attributedText =
-            NSAttributedString(attachment: attachment)
+        NSAttributedString(attachment: attachment)
         
         verificationTimerLabel.textAlignment = .center
         
@@ -601,6 +607,7 @@ class SignUpViewController: UIViewController {
     // MARK: Nickname Field
     // ====================
     @IBOutlet weak var nicknameContainerView: UIView!
+    @IBOutlet weak var nicknameTextField: UITextField!
     
     private func configureNicknameContainer() {
         nicknameContainerView.layer.cornerRadius = 10
@@ -612,5 +619,120 @@ class SignUpViewController: UIViewController {
             alpha: 1
         ).cgColor
     }
+    
+    private func configureNickNameTextField() {
+        nicknameTextField.borderStyle = .none
+        nicknameTextField.font = .systemFont(ofSize: 16)
+        nicknameTextField.textColor = .label
+        
+        nicknameTextField.autocorrectionType = .no
+        nicknameTextField.autocapitalizationType = .none
+    }
+    
+    // =================
+    // MARK: Birth Field
+    // =================
+    @IBOutlet weak var birthContainerView: UIView!
+    @IBOutlet weak var birthTextField: UITextField!
+    @IBOutlet weak var birthButton: UIButton!
+    
+    @IBAction func didTapBirthButton(_ sender: Any) {
+        birthTextField.becomeFirstResponder()
+    }
+    
+    private func configureBirthContainer() {
+        birthContainerView.layer.cornerRadius = 10
+        birthContainerView.layer.borderWidth = 1
+        birthContainerView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
+    }
+    
+    private func configureBirthTextField() {
+        birthTextField.borderStyle = .none
+        birthTextField.font = .systemFont(ofSize: 16)
+        birthTextField.textColor = .label
+        
+        birthDatePicker.datePickerMode = .date
+        birthDatePicker.preferredDatePickerStyle = .wheels
+        birthDatePicker.maximumDate = Date()
+        
+        birthTextField.inputView = birthDatePicker
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let cancelButton = UIBarButtonItem(
+            title: "취소",
+            style: .plain,
+            target: self,
+            action: #selector(didTapBirthCancel)
+        )
+        
+        let flexibleSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        
+        let doneButton = UIBarButtonItem(
+            title: "완료",
+            style: .prominent,
+            target: self,
+            action: #selector(didTapBirthDone)
+        )
+        
+        toolbar.items = [
+            cancelButton,
+            flexibleSpace,
+            doneButton
+        ]
+        
+        birthTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc private func didTapBirthCancel() {
+        print("취소 눌림")
+//        view.endEditing(true)
+        birthTextField.resignFirstResponder()
+    }
+
+    @objc private func didTapBirthDone() {
+        print("완료 눌림")
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy.MM.dd"
+        
+        birthTextField.text = formatter.string(
+            from: birthDatePicker.date
+        )
+        
+//        view.endEditing(true)
+        birthTextField.resignFirstResponder()
+    }
+
+    private func configureBirthButton() {
+        let config = UIImage.SymbolConfiguration(
+            pointSize: 15,
+            weight: .light
+        )
+        
+        let image = UIImage(
+            systemName: "calendar",
+            withConfiguration: config
+        )
+        
+        birthButton.setImage(image, for: .normal)
+        birthButton.tintColor = UIColor(
+            red: 180 / 255,
+            green: 190 / 255,
+            blue: 207 / 255,
+            alpha: 1
+        )
+    }
+    
     
 }
