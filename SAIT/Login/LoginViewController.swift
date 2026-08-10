@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         
         configureSocialButtons()
-        configureEmailTextField()
+        configureLoginIdTextField()
         configurePasswordTextField()
         configureLoginButton()
         configureFindButtons()
@@ -243,7 +243,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("로그인 시도")
     }
     
-    private func configureEmailTextField() {
+    private func configureLoginIdTextField() {
         // 기본 설정
         // Placeholder 색상
         let placeholderColor = UIColor(
@@ -254,7 +254,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         )
         
         loginIdTextField.attributedPlaceholder = NSAttributedString(
-            string: "이메일 입력",
+            string: "아이디 입력",
             attributes: [
                 .foregroundColor: placeholderColor
             ]
@@ -271,7 +271,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         )
         
         // 키보드
-        loginIdTextField.keyboardType = .emailAddress
+//        loginIdTextField.keyboardType = .emailAddress
+//        loginIdTextField.keyboardType = .asciiCapable
         loginIdTextField.autocapitalizationType = .none
         loginIdTextField.autocorrectionType = .no
         
@@ -286,9 +287,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             alpha: 1
         ).cgColor
         
-        // 왼쪽 이메일 아이콘
+        // 왼쪽 아이디 아이콘
         let iconImageView = UIImageView(
-            image: UIImage(systemName: "envelope")
+            image: UIImage(systemName: "person")
         )
         
         iconImageView.tintColor = UIColor(

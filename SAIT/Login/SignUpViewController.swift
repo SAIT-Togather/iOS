@@ -46,6 +46,8 @@ class SignUpViewController: UIViewController {
         configurePasswordToggleButton()
         configurePasswordConfirmContainer()
         configurePasswordConfirmToggleButton()
+        
+        configureNicknameContainer()
     }
     
     // ==============
@@ -595,5 +597,20 @@ class SignUpViewController: UIViewController {
         )
     }
     
+    // ====================
+    // MARK: Nickname Field
+    // ====================
+    @IBOutlet weak var nicknameContainerView: UIView!
+    
+    private func configureNicknameContainer() {
+        nicknameContainerView.layer.cornerRadius = 10
+        nicknameContainerView.layer.borderWidth = 1
+        nicknameContainerView.layer.borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        ).cgColor
+    }
     
 }
