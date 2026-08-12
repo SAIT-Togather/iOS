@@ -696,7 +696,6 @@ class SignUpViewController: UIViewController {
     
     @objc private func didTapBirthCancel() {
         print("취소 눌림")
-//        view.endEditing(true)
         birthTextField.resignFirstResponder()
     }
 
@@ -710,7 +709,6 @@ class SignUpViewController: UIViewController {
             from: birthDatePicker.date
         )
         
-//        view.endEditing(true)
         birthTextField.resignFirstResponder()
     }
 
