@@ -54,6 +54,8 @@ class SignUpViewController: UIViewController {
         configureBirthContainer()
         configureBirthTextField()
         configureBirthButton()
+        
+        configureAgreementUI()
     }
     
     // ==============
@@ -732,5 +734,166 @@ class SignUpViewController: UIViewController {
         )
     }
     
+    // =====================
+    // MARK: Agreement Field
+    // =====================
+    private var isTermsAgreed = false
+    private var isPrivacyAgreed = false
+    private var isMarketingAgreed = false
+    
+    @IBOutlet weak var agreementStackView: UIStackView!
+    @IBOutlet weak var allAgreementContainerView: UIView!
+    @IBOutlet weak var agreementSeparatorView: UIView!
+    
+    @IBOutlet weak var allAgreementButton: UIButton!
+    @IBOutlet weak var termsAgreementButton: UIButton!
+    @IBOutlet weak var privacyAgreementButton: UIButton!
+    @IBOutlet weak var marketingAgreementButton: UIButton!
+    
+    @IBAction func didTapAllAgreementButton(_ sender: Any) {
+        let shouldAgreeAll =
+            !(isTermsAgreed && isPrivacyAgreed && isMarketingAgreed)
+        
+        isTermsAgreed = shouldAgreeAll
+        isPrivacyAgreed = shouldAgreeAll
+        isMarketingAgreed = shouldAgreeAll
+        
+        updateAgreementButtons()
+    }
+    
+    @IBAction func didTapTermsAgreementButton(_ sender: Any) {
+        isTermsAgreed.toggle()
+        updateAgreementButtons()
+    }
+    
+    @IBAction func didTapTermsDetailButton(_ sender: Any) {
+    }
+    
+    @IBAction func didTapPrivacyAgreementButton(_ sender: Any) {
+        isPrivacyAgreed.toggle()
+        updateAgreementButtons()
+    }
+    
+    @IBAction func didTapPrivacyDetailButton(_ sender: Any) {
+    }
+    
+    @IBAction func didTapMarketingAgreementButton(_ sender: Any) {
+        isMarketingAgreed.toggle()
+        updateAgreementButtons()
+    }
+    
+    @IBAction func didTapMarketingDetailButton(_ sender: Any) {
+    }
+    
+    private func configureAgreementUI() {
+        let borderColor = UIColor(
+            red: 220 / 255,
+            green: 226 / 255,
+            blue: 235 / 255,
+            alpha: 1
+        )
+        
+        agreementStackView.layer.cornerRadius = 10
+        agreementStackView.layer.borderWidth = 1
+        agreementStackView.layer.borderColor = borderColor.cgColor
+        agreementStackView.clipsToBounds = true
+        
+        allAgreementContainerView.backgroundColor = .clear
+        
+        agreementSeparatorView.backgroundColor = borderColor
+        
+        configureAgreementButton(allAgreementButton)
+        configureAgreementButton(termsAgreementButton)
+        configureAgreementButton(privacyAgreementButton)
+        configureAgreementButton(marketingAgreementButton)
+        
+        updateAgreementButtons()
+    }
+    
+    private func configureAgreementButton(_ button: UIButton) {
+        button.configuration = nil
+        
+        let config = UIImage.SymbolConfiguration(
+            pointSize: 20,
+            weight: .regular
+        )
+        
+        button.setPreferredSymbolConfiguration(
+            config,
+            forImageIn: .normal
+        )
+        
+        button.setImage(
+            UIImage(systemName: "circle"),
+            for: .normal
+        )
+        
+//        button.tintColor = UIColor(
+//            red: 0.055,
+//            green: 0.169,
+//            blue: 0.302,
+//            alpha: 1
+//        )
+        button.tintColor = UIColor(
+            red: 55 / 255,
+            green: 125 / 255,
+            blue: 245 / 255,
+            alpha: 1
+        )
+        button.setTitle(nil, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+    }
+    
+    private func updateAgreementButtons() {
+        updateAgreementButton(
+            allAgreementButton,
+            isSelected: isTermsAgreed
+                && isPrivacyAgreed
+                && isMarketingAgreed
+        )
+
+        updateAgreementButton(
+            termsAgreementButton,
+            isSelected: isTermsAgreed
+        )
+
+        updateAgreementButton(
+            privacyAgreementButton,
+            isSelected: isPrivacyAgreed
+        )
+
+        updateAgreementButton(
+            marketingAgreementButton,
+            isSelected: isMarketingAgreed
+        )
+    }
+    
+    private func updateAgreementButton(
+        _ button: UIButton,
+        isSelected: Bool
+    ) {
+        let imageName = isSelected
+            ? "checkmark.circle.fill"
+            : "circle"
+        
+        button.setImage(
+            UIImage(systemName: imageName),
+            for: .normal
+        )
+        
+        button.tintColor = isSelected
+        ? UIColor(
+            red: 55 / 255,
+            green: 125 / 255,
+            blue: 245 / 255,
+            alpha: 1
+        )
+        : UIColor(
+            red: 180 / 255,
+            green: 190 / 255,
+            blue: 207 / 255,
+            alpha: 1
+        )
+    }
     
 }

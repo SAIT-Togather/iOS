@@ -353,10 +353,10 @@
                                 <rect key="frame" x="0.0" y="178" width="402" height="628"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwP-Ye-nGq" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="874.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1035.3333333333333"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HVP-wS-uhD" userLabel="Main Stack View">
-                                                <rect key="frame" x="24" y="16" width="354" height="842.33333333333337"/>
+                                                <rect key="frame" x="24" y="16.000000000000057" width="354" height="1003.3333333333335"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="DaO-GQ-7bL" userLabel="Header Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="182.33333333333334"/>
@@ -768,23 +768,26 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-ap-ul2" userLabel="Agreement Stack View">
-                                                        <rect key="frame" x="0.0" y="794.33333333333337" width="354" height="48"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-ap-ul2" userLabel="Agreement Stack View">
+                                                        <rect key="frame" x="0.0" y="794.33333333333337" width="354" height="209"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sME-pB-OkV" userLabel="All Agreement Container View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01s-Ge-b9f" userLabel="All Agreement Button">
-                                                                        <rect key="frame" x="16" y="10" width="28" height="28"/>
+                                                                        <rect key="frame" x="16" y="12" width="28" height="28"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="28" id="Gfr-Rg-2c5"/>
                                                                             <constraint firstAttribute="width" constant="28" id="mRT-VA-Hbo"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="didTapAllAgreementButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="Ad4-OE-fnn"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약관 전체 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tE-vR-xgD" userLabel="All Agreement Label">
-                                                                        <rect key="frame" x="54" y="14.333333333333256" width="284" height="19.333333333333329"/>
+                                                                        <rect key="frame" x="54" y="16.333333333333258" width="91" height="19.333333333333329"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -793,13 +796,162 @@
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="0tE-vR-xgD" firstAttribute="leading" secondItem="01s-Ge-b9f" secondAttribute="trailing" constant="10" id="1nq-06-MDt"/>
-                                                                    <constraint firstAttribute="height" constant="48" id="EKg-7C-soz"/>
+                                                                    <constraint firstAttribute="height" constant="52" id="EKg-7C-soz"/>
                                                                     <constraint firstItem="01s-Ge-b9f" firstAttribute="leading" secondItem="sME-pB-OkV" secondAttribute="leading" constant="16" id="Lpz-XI-Qis"/>
                                                                     <constraint firstItem="0tE-vR-xgD" firstAttribute="centerY" secondItem="sME-pB-OkV" secondAttribute="centerY" id="Uh7-fl-xYy"/>
-                                                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0tE-vR-xgD" secondAttribute="trailing" constant="16" id="ecg-ro-MOD"/>
                                                                     <constraint firstItem="01s-Ge-b9f" firstAttribute="centerY" secondItem="sME-pB-OkV" secondAttribute="centerY" id="gDh-KV-ejS"/>
                                                                 </constraints>
                                                             </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHK-ro-VjI" userLabel="Agreement Separator View">
+                                                                <rect key="frame" x="0.0" y="51.999999999999886" width="354" height="1"/>
+                                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="091-Sr-dGH"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M21-HZ-8m7" userLabel="Detail Agreement Stack View">
+                                                                <rect key="frame" x="0.0" y="52.999999999999886" width="354" height="156"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWO-q3-nVu" userLabel="Terms Agreement Container View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxi-TM-Q6b" userLabel="Terms Agreement Button">
+                                                                                <rect key="frame" x="16" y="12" width="28" height="28"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="28" id="UZ5-jK-rh9"/>
+                                                                                    <constraint firstAttribute="width" constant="28" id="nO9-z3-qhe"/>
+                                                                                </constraints>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                                                <connections>
+                                                                                    <action selector="didTapTermsAgreementButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="U99-9U-D8i"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[필수] 서비스 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-jo-6Na" userLabel="Terms Agreement Label">
+                                                                                <rect key="frame" x="54" y="17" width="136" height="18"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pM-Qm-L63" userLabel="Terms Detail Button">
+                                                                                <rect key="frame" x="310" y="10" width="32" height="32"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="32" id="YUT-Yb-6x7"/>
+                                                                                    <constraint firstAttribute="height" constant="32" id="kVc-O5-VKZ"/>
+                                                                                </constraints>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                                                                <connections>
+                                                                                    <action selector="didTapTermsDetailButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="dUn-yt-SE1"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="6pM-Qm-L63" secondAttribute="trailing" constant="12" id="7wf-i7-mDV"/>
+                                                                            <constraint firstItem="Pxi-TM-Q6b" firstAttribute="centerY" secondItem="dWO-q3-nVu" secondAttribute="centerY" id="9V3-YL-EvH"/>
+                                                                            <constraint firstItem="Pxi-TM-Q6b" firstAttribute="leading" secondItem="dWO-q3-nVu" secondAttribute="leading" constant="16" id="Gad-mi-zcs"/>
+                                                                            <constraint firstItem="xpV-jo-6Na" firstAttribute="leading" secondItem="Pxi-TM-Q6b" secondAttribute="trailing" constant="10" id="UJR-b0-eHj"/>
+                                                                            <constraint firstItem="6pM-Qm-L63" firstAttribute="centerY" secondItem="dWO-q3-nVu" secondAttribute="centerY" id="dzu-rV-hxd"/>
+                                                                            <constraint firstAttribute="height" constant="52" id="eNb-KA-4rg"/>
+                                                                            <constraint firstItem="6pM-Qm-L63" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xpV-jo-6Na" secondAttribute="trailing" constant="8" id="v86-Wh-hbx"/>
+                                                                            <constraint firstItem="xpV-jo-6Na" firstAttribute="centerY" secondItem="dWO-q3-nVu" secondAttribute="centerY" id="wmX-Yq-QtZ"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeM-xH-8av" userLabel="Privacy Agreement Container View">
+                                                                        <rect key="frame" x="0.0" y="52" width="354" height="52"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql9-wQ-YR6" userLabel="Privacy Agreement Button">
+                                                                                <rect key="frame" x="16" y="12" width="28" height="28"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="28" id="FKp-R8-7yc"/>
+                                                                                    <constraint firstAttribute="height" constant="28" id="bol-ma-SYQ"/>
+                                                                                </constraints>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                                                <connections>
+                                                                                    <action selector="didTapPrivacyAgreementButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="GYH-7p-eWN"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[필수] 개인정보 수집 및 이용 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2H-iD-VkV" userLabel="Privacy Agreement Label">
+                                                                                <rect key="frame" x="53.999999999999986" y="17" width="199.66666666666663" height="18"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNQ-1o-e1B" userLabel="Privacy Detail Button">
+                                                                                <rect key="frame" x="310" y="10" width="32" height="32"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="32" id="bdc-dD-3Hh"/>
+                                                                                    <constraint firstAttribute="height" constant="32" id="rze-d1-xWh"/>
+                                                                                </constraints>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                                                                <connections>
+                                                                                    <action selector="didTapPrivacyDetailButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="9IR-fP-UPe"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="A2H-iD-VkV" firstAttribute="leading" secondItem="ql9-wQ-YR6" secondAttribute="trailing" constant="10" id="AKW-ZS-q1q"/>
+                                                                            <constraint firstItem="kNQ-1o-e1B" firstAttribute="centerY" secondItem="JeM-xH-8av" secondAttribute="centerY" id="Jer-JE-bAE"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="kNQ-1o-e1B" secondAttribute="trailing" constant="12" id="Poz-D1-Fam"/>
+                                                                            <constraint firstItem="kNQ-1o-e1B" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="A2H-iD-VkV" secondAttribute="trailing" constant="8" id="ZTC-fN-Fq2"/>
+                                                                            <constraint firstItem="ql9-wQ-YR6" firstAttribute="leading" secondItem="JeM-xH-8av" secondAttribute="leading" constant="16" id="hT8-Y3-JFU"/>
+                                                                            <constraint firstAttribute="height" constant="52" id="voL-Lo-GG0"/>
+                                                                            <constraint firstItem="ql9-wQ-YR6" firstAttribute="centerY" secondItem="JeM-xH-8av" secondAttribute="centerY" id="wcx-ED-AtS"/>
+                                                                            <constraint firstItem="A2H-iD-VkV" firstAttribute="centerY" secondItem="JeM-xH-8av" secondAttribute="centerY" id="zFl-bk-MA6"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-S6-X2r" userLabel="Marketing Agreement Container View">
+                                                                        <rect key="frame" x="0.0" y="104" width="354" height="52"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-27-ixh" userLabel="Marketing Agreement Button">
+                                                                                <rect key="frame" x="16" y="12" width="28" height="28"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="28" id="KZq-KK-6GX"/>
+                                                                                    <constraint firstAttribute="width" constant="28" id="fNy-rK-jG5"/>
+                                                                                </constraints>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                                                <connections>
+                                                                                    <action selector="didTapMarketingAgreementButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="yMR-Ik-iy9"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[선택] 마케팅 정보 수신 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMM-UB-qx6" userLabel="Marketing Agreement Label">
+                                                                                <rect key="frame" x="53.999999999999986" y="17" width="169.66666666666663" height="18"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6Y-LA-Wjo" userLabel="Marketing Detail Button">
+                                                                                <rect key="frame" x="310" y="10" width="32" height="32"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="32" id="77d-vu-EIJ"/>
+                                                                                    <constraint firstAttribute="width" constant="32" id="Zxe-Y6-Moh"/>
+                                                                                </constraints>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                                                                <connections>
+                                                                                    <action selector="didTapMarketingDetailButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="5Ml-zs-ULi"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="JMM-UB-qx6" firstAttribute="leading" secondItem="0gg-27-ixh" secondAttribute="trailing" constant="10" id="3bq-h4-ltn"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="x6Y-LA-Wjo" secondAttribute="trailing" constant="12" id="4bJ-ya-lCE"/>
+                                                                            <constraint firstItem="x6Y-LA-Wjo" firstAttribute="centerY" secondItem="Cdn-S6-X2r" secondAttribute="centerY" id="DrI-O2-zJ0"/>
+                                                                            <constraint firstItem="0gg-27-ixh" firstAttribute="leading" secondItem="Cdn-S6-X2r" secondAttribute="leading" constant="16" id="JL4-z6-f9O"/>
+                                                                            <constraint firstItem="JMM-UB-qx6" firstAttribute="centerY" secondItem="Cdn-S6-X2r" secondAttribute="centerY" id="h4x-rq-HkT"/>
+                                                                            <constraint firstItem="0gg-27-ixh" firstAttribute="centerY" secondItem="Cdn-S6-X2r" secondAttribute="centerY" id="jsO-pT-8TV"/>
+                                                                            <constraint firstItem="x6Y-LA-Wjo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JMM-UB-qx6" secondAttribute="trailing" constant="8" id="lUj-Dt-RJP"/>
+                                                                            <constraint firstAttribute="height" constant="52" id="zfo-3C-HeN"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -836,6 +988,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="YJ8-t8-J94"/>
                     <connections>
+                        <outlet property="agreementSeparatorView" destination="pHK-ro-VjI" id="dSE-S2-6fr"/>
+                        <outlet property="agreementStackView" destination="rSI-ap-ul2" id="ZNl-do-60x"/>
+                        <outlet property="allAgreementButton" destination="01s-Ge-b9f" id="EB0-HV-VQx"/>
+                        <outlet property="allAgreementContainerView" destination="sME-pB-OkV" id="JeC-5E-9ab"/>
                         <outlet property="birthButton" destination="XcQ-gP-cxO" id="KOk-AV-jsu"/>
                         <outlet property="birthContainerView" destination="fkM-nm-t9r" id="uxs-rU-uOG"/>
                         <outlet property="birthTextField" destination="E83-ZS-fNy" id="Maj-gT-uhc"/>
@@ -848,6 +1004,7 @@
                         <outlet property="idContainerView" destination="GSr-AM-LbE" id="qXq-4e-ss5"/>
                         <outlet property="idGuideLabel" destination="RRA-L2-CUK" id="TKr-Vs-UHM"/>
                         <outlet property="idTextField" destination="sih-9C-hXz" id="WxJ-nf-ErR"/>
+                        <outlet property="marketingAgreementButton" destination="0gg-27-ixh" id="EM3-TY-9ck"/>
                         <outlet property="nicknameContainerView" destination="WNV-vW-Ovu" id="Z8s-lw-Ek9"/>
                         <outlet property="nicknameTextField" destination="61M-C3-PP6" id="sLv-Rx-s3j"/>
                         <outlet property="passwordConfirmContainerView" destination="LYH-X7-ZBf" id="vfa-eu-hvb"/>
@@ -856,6 +1013,8 @@
                         <outlet property="passwordContainerView" destination="FGL-mW-Jcu" id="KZI-sq-dT5"/>
                         <outlet property="passwordTextField" destination="70z-AD-gI8" id="qEd-Qc-3uC"/>
                         <outlet property="passwordToggleButton" destination="gRX-RF-g3k" id="T7X-T4-kgs"/>
+                        <outlet property="privacyAgreementButton" destination="ql9-wQ-YR6" id="VwY-fV-4Fs"/>
+                        <outlet property="termsAgreementButton" destination="Pxi-TM-Q6b" id="dPy-a2-Kqz"/>
                         <outlet property="verificationCheckButton" destination="Eda-sE-YIw" id="gFq-dr-zan"/>
                         <outlet property="verificationContainerView" destination="2Ep-Wv-3Zo" id="bL3-h6-5UI"/>
                         <outlet property="verificationGuideLabel" destination="01y-TF-lKL" id="rfg-lG-MLg"/>
@@ -890,6 +1049,7 @@
     <resources>
         <image name="birthday.cake" catalog="system" width="128" height="115"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="envelope" catalog="system" width="128" height="85"/>
         <image name="eye" catalog="system" width="128" height="79"/>
@@ -898,22 +1058,25 @@
         <image name="saitLogo" width="1254" height="1254"/>
         <image name="smiley" catalog="system" width="128" height="123"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.21960784310000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
