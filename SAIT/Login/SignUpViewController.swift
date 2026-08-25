@@ -56,6 +56,8 @@ class SignUpViewController: UIViewController {
         configureBirthButton()
         
         configureAgreementUI()
+        
+        configureSignUpButton()
     }
     
     // ==============
@@ -893,6 +895,36 @@ class SignUpViewController: UIViewController {
             green: 190 / 255,
             blue: 207 / 255,
             alpha: 1
+        )
+    }
+    
+    // ====================
+    // MARK: Sign Up Button
+    // ====================
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBAction func didTapSignUpButton(_ sender: Any) {
+    }
+    
+    private func configureSignUpButton() {
+        signUpButton.configuration = nil
+        
+        signUpButton.layer.cornerRadius = 12
+        signUpButton.clipsToBounds = true
+        
+        signUpButton.backgroundColor = UIColor(
+            red: 55 / 255,
+            green: 125 / 255,
+            blue: 245 / 255,
+            alpha: 1
+        )
+        
+        signUpButton.setTitle("회원가입", for: .normal)
+        signUpButton.setTitleColor(.white, for: .normal)
+        
+        signUpButton.titleLabel?.font = .systemFont(
+            ofSize: 17,
+            weight: .semibold
         )
     }
     

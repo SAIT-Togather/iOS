@@ -353,10 +353,10 @@
                                 <rect key="frame" x="0.0" y="178" width="402" height="628"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwP-Ye-nGq" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1035.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1105.3333333333333"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HVP-wS-uhD" userLabel="Main Stack View">
-                                                <rect key="frame" x="24" y="16.000000000000057" width="354" height="1003.3333333333335"/>
+                                                <rect key="frame" x="24" y="16" width="354" height="1073.3333333333333"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="DaO-GQ-7bL" userLabel="Header Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="182.33333333333334"/>
@@ -954,6 +954,17 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONO-yZ-JhQ" userLabel="Sign Up Button">
+                                                        <rect key="frame" x="0.0" y="1019.3333333333333" width="354" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="54" id="ftn-k0-mIX"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
+                                                        <connections>
+                                                            <action selector="didTapSignUpButton:" destination="fbP-Db-kn4" eventType="touchUpInside" id="NMe-U2-44L"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -1014,6 +1025,7 @@
                         <outlet property="passwordTextField" destination="70z-AD-gI8" id="qEd-Qc-3uC"/>
                         <outlet property="passwordToggleButton" destination="gRX-RF-g3k" id="T7X-T4-kgs"/>
                         <outlet property="privacyAgreementButton" destination="ql9-wQ-YR6" id="VwY-fV-4Fs"/>
+                        <outlet property="signUpButton" destination="ONO-yZ-JhQ" id="c0P-WQ-UjO"/>
                         <outlet property="termsAgreementButton" destination="Pxi-TM-Q6b" id="dPy-a2-Kqz"/>
                         <outlet property="verificationCheckButton" destination="Eda-sE-YIw" id="gFq-dr-zan"/>
                         <outlet property="verificationContainerView" destination="2Ep-Wv-3Zo" id="bL3-h6-5UI"/>
