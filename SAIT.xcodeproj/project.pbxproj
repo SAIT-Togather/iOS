@@ -45,7 +45,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D3E02233302A44E60037B457 /* Login */ = {
+		D3E02233302A44E60037B457 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				D3EB36F33001215900182A0E /* Main.storyboard */,
@@ -54,7 +54,7 @@
 				D3EB370630013C5500182A0E /* FindIDViewController.swift */,
 				D3EB370830013C5E00182A0E /* FindPasswordViewController.swift */,
 			);
-			path = Login;
+			path = Account;
 			sourceTree = "<group>";
 		};
 		D3EB36BA3001203100182A0E = {
@@ -80,7 +80,7 @@
 				D3EB36EF3001215900182A0E /* Info.plist */,
 				D3EB36F13001215900182A0E /* LaunchScreen.storyboard */,
 				D3EB36F53001215900182A0E /* SceneDelegate.swift */,
-				D3E02233302A44E60037B457 /* Login */,
+				D3E02233302A44E60037B457 /* Account */,
 				D3EB37003001221000182A0E /* Resource */,
 			);
 			path = SAIT;

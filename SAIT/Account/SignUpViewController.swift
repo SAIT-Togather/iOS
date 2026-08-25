@@ -904,12 +904,15 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func didTapSignUpButton(_ sender: Any) {
+        guard isIdChecked else {
+            
+        }
     }
     
     private func configureSignUpButton() {
         signUpButton.configuration = nil
         
-        signUpButton.layer.cornerRadius = 12
+        signUpButton.layer.cornerRadius = 10
         signUpButton.clipsToBounds = true
         
         signUpButton.backgroundColor = UIColor(
