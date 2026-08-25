@@ -216,27 +216,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    private func showAlert(message: String) {
-        let alert = UIAlertController(
-            title: "알림",
-            message: message,
-            preferredStyle: .alert
-        )
-        
-        alert.addAction(UIAlertAction(title: "확인", style: .default))
-        present(alert, animated: true)
-    }
+    
 
     @IBAction func didTapLoginButton(_ sender: Any) {
         view.endEditing(true)
         
         guard let id = loginIdTextField.text, !id.trimmingCharacters(in: .whitespaces).isEmpty else {
-            showAlert(message: "아이디를 입력해주세요.")
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "아이디를 입력해주세요."
+            )
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
-            showAlert(message: "비밀번호를 입력해주세요.")
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "비밀번호를 입력해주세요."
+            )
             return
         }
         

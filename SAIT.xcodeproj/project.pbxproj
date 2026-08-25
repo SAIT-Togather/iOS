@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D37D7703303DE11A006F67A6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D7702303DE11A006F67A6 /* Util.swift */; };
 		D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB36ED3001215900182A0E /* AppDelegate.swift */; };
 		D3EB36F93001215900182A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB36F53001215900182A0E /* SceneDelegate.swift */; };
 		D3EB36FB3001215900182A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EB36EE3001215900182A0E /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D37D7702303DE11A006F67A6 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D3EB36C33001203100182A0E /* SAIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EB36ED3001215900182A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3EB36EE3001215900182A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D37D7701303DE0F5006F67A6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D37D7702303DE11A006F67A6 /* Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		D3E02233302A44E60037B457 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 				D3EB36F13001215900182A0E /* LaunchScreen.storyboard */,
 				D3EB36F53001215900182A0E /* SceneDelegate.swift */,
 				D3E02233302A44E60037B457 /* Account */,
+				D37D7701303DE0F5006F67A6 /* Util */,
 				D3EB37003001221000182A0E /* Resource */,
 			);
 			path = SAIT;
@@ -174,6 +185,7 @@
 				D3EB37033001265C00182A0E /* LoginViewController.swift in Sources */,
 				D3EB370930013C5E00182A0E /* FindPasswordViewController.swift in Sources */,
 				D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */,
+				D37D7703303DE11A006F67A6 /* Util.swift in Sources */,
 				D3EB36F93001215900182A0E /* SceneDelegate.swift in Sources */,
 				D3EB370530013A5A00182A0E /* SignUpViewController.swift in Sources */,
 			);

@@ -9,12 +9,6 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    private var isIdChecked = false
-    private var verificationTimer: Timer?
-    private var verificationTimerLeft = 300
-    private var isEmailVerified = false
-    private let birthDatePicker = UIDatePicker()
-    
     // =========================
     // MARK: View LifeCycle Func
     // =========================
@@ -63,6 +57,8 @@ class SignUpViewController: UIViewController {
     // ==============
     // MARK: ID Field
     // ==============
+    private var isIdChecked = false
+    
     @IBOutlet weak var idContainerView: UIView!
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var idCheckButton: UIButton!
@@ -186,6 +182,10 @@ class SignUpViewController: UIViewController {
     // =================
     // MARK: Email Field
     // =================
+    private var verificationTimer: Timer?
+    private var verificationTimerLeft = 300
+    private var isEmailVerified = false
+    
     @IBOutlet weak var emailContainerView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailCheckButton: UIButton!
@@ -636,6 +636,8 @@ class SignUpViewController: UIViewController {
     // =================
     // MARK: Birth Field
     // =================
+    private let birthDatePicker = UIDatePicker()
+    
     @IBOutlet weak var birthContainerView: UIView!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var birthButton: UIButton!
@@ -699,12 +701,10 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func didTapBirthCancel() {
-        print("취소 눌림")
         birthTextField.resignFirstResponder()
     }
 
     @objc private func didTapBirthDone() {
-        print("완료 눌림")
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "yyyy.MM.dd"
@@ -905,8 +905,84 @@ class SignUpViewController: UIViewController {
     
     @IBAction func didTapSignUpButton(_ sender: Any) {
         guard isIdChecked else {
-            
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "ID 중복확인을 해주세요."
+            )
+            return
         }
+        
+        guard isEmailVerified else {
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "이메일 인증을 완료해주세요"
+            )
+            return
+        }
+        
+        guard let password = passwordTextField.text,
+              !password.isEmpty else {
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "비밀번호를 입력해주세요."
+            )
+            return
+        }
+        
+        guard let passwordConfirm = passwordConfirmTextField.text,
+              !passwordConfirm.isEmpty else {
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "비밀번호 확인을 입력해주세요."
+            )
+            return
+        }
+        
+        guard password == passwordConfirm else {
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "비밀번호가 일치하지 않습니다."
+            )
+            return
+        }
+
+        guard let nickname = nicknameTextField.text?
+            .trimmingCharacters(in: .whitespacesAndNewlines),
+              !nickname.isEmpty else {
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "닉네임을 입력해주세요."
+            )
+            return
+        }
+        
+        guard let birth = birthTextField.text,
+              !birth.isEmpty else {
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "생년월일을 선택해주세요."
+            )
+            return
+        }
+        
+        guard isTermsAgreed && isPrivacyAgreed else {
+            Util.showAlert(
+                on: self,
+                title: "SAIT",
+                message: "필수 약관에 동의해주세요."
+            )
+            return
+        }
+
+        // TODO: 서버 회원 가입 API 연결
+        print("회원가입 완료")
     }
     
     private func configureSignUpButton() {
