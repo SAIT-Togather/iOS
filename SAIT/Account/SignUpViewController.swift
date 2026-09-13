@@ -217,13 +217,13 @@ class SignUpViewController: UIViewController {
         verificationTextField.textColor = .label
         verificationCheckButton.alpha = 1
         
+        resetVerificationUI()
         showEmailCodeSent()
         
         emailVerificationStackView.isHidden = false
         
         verificationGuideLabel.text = "인증번호 6자리를 입력해주세요."
         verificationGuideLabel.textColor = .secondaryLabel
-        verificationTextField.text = ""
         
         startVerificationTimer()
     }
@@ -310,7 +310,28 @@ class SignUpViewController: UIViewController {
     
     @objc private func emailTextFieldDidChange() {
         isEmailVerified = false
+        
         resetEmailGuide()
+        
+        emailVerificationStackView.isHidden = true
+        
+        emailCheckButton.isEnabled = true
+        emailCheckButton.alpha = 1.0
+        
+        verificationTimer?.invalidate()
+        verificationTimer = nil
+        
+        resetVerificationUI()
+    }
+    
+    private func resetVerificationUI() {
+        verificationTextField.text = ""
+        verificationTextField.isEnabled = true
+        verificationCheckButton.isEnabled = true
+        
+        verificationInputView.backgroundColor = .clear
+        verificationTextField.textColor = .label
+        verificationCheckButton.alpha = 1.0
     }
     
     // ==============================

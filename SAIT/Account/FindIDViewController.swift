@@ -18,6 +18,18 @@ class FindIDViewController: UIViewController {
         configureUI()
     }
     
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ) {
+        guard segue.identifier == "showFindIDResult",
+              let resultVC = segue.destination as? FindIDResultViewController else {
+            return
+        }
+        
+        resultVC.foundId = "dleodudi"
+    }
+    
     // ====================
     // MARK: User Interface
     // ====================
@@ -67,22 +79,19 @@ class FindIDViewController: UIViewController {
         // 테스트 코드
         isEmailVerified = false
         
-        verificationTextField.isEnabled = true
-        verificationCheckButton.isEnabled = true
-        
-        verificationInputView.backgroundColor = .clear
-        verificationTextField.textColor = .label
-        verificationCheckButton.alpha = 1
-        
+        resetVerificationUI()
         showEmailCodeSent()
+        
+        emailCheckButton.isEnabled = false
+        emailCheckButton.alpha = 0.5
         
         emailVerificationStackView.isHidden = false
         
         verificationGuideLabel.text = "인증번호 6자리를 입력해주세요."
         verificationGuideLabel.textColor = .secondaryLabel
-        verificationTextField.text = ""
         
         startVerificationTimer()
+        
     }
     
     private func configureEmailContainer() {
@@ -167,7 +176,28 @@ class FindIDViewController: UIViewController {
     
     @objc private func emailTextFieldDidChange() {
         isEmailVerified = false
+        
         resetEmailGuide()
+        
+        emailVerificationStackView.isHidden = true
+        
+        emailCheckButton.isEnabled = true
+        emailCheckButton.alpha = 1.0
+        
+        verificationTimer?.invalidate()
+        verificationTimer = nil
+        
+        resetVerificationUI()
+    }
+    
+    private func resetVerificationUI() {
+        verificationTextField.text = ""
+        verificationTextField.isEnabled = true
+        verificationCheckButton.isEnabled = true
+        
+        verificationInputView.backgroundColor = .clear
+        verificationTextField.textColor = .label
+        verificationCheckButton.alpha = 1.0
     }
     
     // ==============================
@@ -391,7 +421,12 @@ class FindIDViewController: UIViewController {
             return
         }
         
-        print("아이디 찾기 완료")
+        print("아이디 찾기 요청 완료")
+        
+        performSegue(
+            withIdentifier: "showFindIDResult",
+            sender: nil
+        )
     }
     
     private func configureFindIdButton() {
