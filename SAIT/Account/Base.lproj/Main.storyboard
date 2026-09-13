@@ -299,22 +299,250 @@
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아이디 찾기 페이지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYL-GS-olV">
-                                <rect key="frame" x="0.0" y="397" width="402" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-Wu-9bt">
+                                <rect key="frame" x="0.0" y="178" width="402" height="628"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yb-qB-2K1" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="518.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="S1V-CF-ybQ" userLabel="Main Stack View">
+                                                <rect key="frame" x="24" y="15.999999999999972" width="354" height="486.33333333333326"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sLB-Ka-ATy" userLabel="Header Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="182.33333333333334"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saitLogo" translatesAutoresizingMaskIntoConstraints="NO" id="RQp-Jx-JoS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="72"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="72" id="SOQ-M0-0FE"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sze-2v-6er">
+                                                                <rect key="frame" x="0.0" y="78" width="354" height="43"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                                <color key="textColor" red="0.054901960780000002" green="0.16862745100000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-qn-TDb">
+                                                                <rect key="frame" x="0.0" y="126.99999999999999" width="354" height="31.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                                                <color key="textColor" red="0.054901960780000002" green="0.16862745100000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입 시 등록한 이메일을 입력해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzo-3E-YT6">
+                                                                <rect key="frame" x="0.0" y="164.33333333333331" width="354" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-4K-onP" userLabel="Email Stack View">
+                                                        <rect key="frame" x="0.0" y="198.33333333333331" width="354" height="74"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-qj-vWc" userLabel="Email Container View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="52"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="z5n-wZ-6hb" userLabel="Email Icon Image View">
+                                                                        <rect key="frame" x="16" y="18.333333333333336" width="20" height="16.000000000000007"/>
+                                                                        <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="20" id="0e1-6v-kb6"/>
+                                                                            <constraint firstAttribute="height" constant="20" id="k22-eQ-2fj"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2X9-ql-bNi" userLabel="Email TextField">
+                                                                        <rect key="frame" x="48" y="15" width="210" height="22"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-1K-dQR" userLabel="Email Check Button">
+                                                                        <rect key="frame" x="266" y="9" width="76" height="34"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="76" id="JRX-Pg-0Xl"/>
+                                                                            <constraint firstAttribute="height" constant="34" id="jJf-x5-h3g"/>
+                                                                        </constraints>
+                                                                        <color key="tintColor" red="0.054901960780000002" green="0.16862745100000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="인증요청"/>
+                                                                        <connections>
+                                                                            <action selector="didTapEmailCheckButton:" destination="lKa-fk-FRa" eventType="touchUpInside" id="Hre-C4-HJZ"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="R0b-1K-dQR" secondAttribute="trailing" constant="12" id="1K7-PA-mvU"/>
+                                                                    <constraint firstItem="2X9-ql-bNi" firstAttribute="leading" secondItem="z5n-wZ-6hb" secondAttribute="trailing" constant="12" id="DJh-L4-ohB"/>
+                                                                    <constraint firstItem="z5n-wZ-6hb" firstAttribute="centerY" secondItem="ZgX-qj-vWc" secondAttribute="centerY" id="Hm2-Qn-6rj"/>
+                                                                    <constraint firstItem="R0b-1K-dQR" firstAttribute="leading" secondItem="2X9-ql-bNi" secondAttribute="trailing" constant="8" id="JMR-s8-MnA"/>
+                                                                    <constraint firstItem="R0b-1K-dQR" firstAttribute="centerY" secondItem="ZgX-qj-vWc" secondAttribute="centerY" id="Kb2-wg-iim"/>
+                                                                    <constraint firstItem="2X9-ql-bNi" firstAttribute="centerY" secondItem="ZgX-qj-vWc" secondAttribute="centerY" id="QFz-7m-gJM"/>
+                                                                    <constraint firstAttribute="height" constant="52" id="qga-wb-PSS"/>
+                                                                    <constraint firstItem="z5n-wZ-6hb" firstAttribute="leading" secondItem="ZgX-qj-vWc" secondAttribute="leading" constant="16" id="sIm-c5-Nbn"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MM9-5n-1Qb" userLabel="Email Guide Container View">
+                                                                <rect key="frame" x="0.0" y="58" width="354" height="16"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 주소를 입력해주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLo-bj-LcJ">
+                                                                        <rect key="frame" x="16" y="0.0" width="338" height="16"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="gLo-bj-LcJ" firstAttribute="leading" secondItem="MM9-5n-1Qb" secondAttribute="leading" constant="16" id="6Iq-wM-m0N"/>
+                                                                    <constraint firstItem="gLo-bj-LcJ" firstAttribute="top" secondItem="MM9-5n-1Qb" secondAttribute="top" id="6is-3S-36t"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gLo-bj-LcJ" secondAttribute="trailing" id="Ard-z7-nIN"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="gLo-bj-LcJ" secondAttribute="bottom" id="SUh-a2-GiP"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="bXt-st-N9o"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="67n-VE-kuf" userLabel="Email Verification Stack View">
+                                                        <rect key="frame" x="0.0" y="288.33333333333331" width="354" height="128"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shw-uG-Mfc" userLabel="Verification Container View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="128"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호가 이메일로 발송되었습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-Ax-P2g">
+                                                                        <rect key="frame" x="16" y="13.999999999999998" width="322" height="20.333333333333329"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5C-mt-EZr" userLabel="Verification Input View">
+                                                                        <rect key="frame" x="14" y="44.333333333333314" width="326" height="48"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증번호 6자리를 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uC4-mX-X5w" userLabel="Verification TextField">
+                                                                                <rect key="frame" x="14" y="13" width="180" height="22"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                            </textField>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKZ-xW-M3R">
+                                                                                <rect key="frame" x="202" y="15.666666666666742" width="44" height="17"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="44" id="n6g-kf-XBo"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COw-cP-8U2">
+                                                                                <rect key="frame" x="254" y="7" width="64" height="34"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="64" id="3mS-43-RVW"/>
+                                                                                    <constraint firstAttribute="height" constant="34" id="gM9-Gi-hMF"/>
+                                                                                </constraints>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                <state key="normal" title="확인"/>
+                                                                                <connections>
+                                                                                    <action selector="didTapVerificationCheckButton:" destination="lKa-fk-FRa" eventType="touchUpInside" id="CWu-eJ-TYR"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="COw-cP-8U2" firstAttribute="leading" secondItem="JKZ-xW-M3R" secondAttribute="trailing" constant="8" id="6Il-Kz-MpP"/>
+                                                                            <constraint firstAttribute="height" constant="48" id="6rY-HP-zLr"/>
+                                                                            <constraint firstItem="JKZ-xW-M3R" firstAttribute="leading" secondItem="uC4-mX-X5w" secondAttribute="trailing" constant="8" id="N5o-pP-tps"/>
+                                                                            <constraint firstItem="JKZ-xW-M3R" firstAttribute="centerY" secondItem="A5C-mt-EZr" secondAttribute="centerY" id="Qft-iG-eFA"/>
+                                                                            <constraint firstItem="COw-cP-8U2" firstAttribute="centerY" secondItem="A5C-mt-EZr" secondAttribute="centerY" id="SBI-Z5-4b7"/>
+                                                                            <constraint firstItem="uC4-mX-X5w" firstAttribute="centerY" secondItem="A5C-mt-EZr" secondAttribute="centerY" id="Urx-rx-GcI"/>
+                                                                            <constraint firstItem="uC4-mX-X5w" firstAttribute="leading" secondItem="A5C-mt-EZr" secondAttribute="leading" constant="14" id="WmV-6L-bPU"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="COw-cP-8U2" secondAttribute="trailing" constant="8" id="jvc-Zp-ugI"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호 6자리를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3q-4Z-TjD" userLabel="Verification Guide Label">
+                                                                        <rect key="frame" x="16" y="98.333333333333314" width="322" height="15.666666666666671"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="Qfc-Ax-P2g" firstAttribute="top" secondItem="Shw-uG-Mfc" secondAttribute="top" constant="14" id="1tw-Ax-k8b"/>
+                                                                    <constraint firstItem="A5C-mt-EZr" firstAttribute="leading" secondItem="Shw-uG-Mfc" secondAttribute="leading" constant="14" id="1w3-pA-Gmo"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="A3q-4Z-TjD" secondAttribute="trailing" constant="16" id="3Ib-5g-lbV"/>
+                                                                    <constraint firstItem="A3q-4Z-TjD" firstAttribute="leading" secondItem="Shw-uG-Mfc" secondAttribute="leading" constant="16" id="9rx-tD-5Jv"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="A5C-mt-EZr" secondAttribute="trailing" constant="14" id="DT3-RX-Wz5"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="A3q-4Z-TjD" secondAttribute="bottom" constant="14" id="P2a-h3-hiD"/>
+                                                                    <constraint firstItem="A5C-mt-EZr" firstAttribute="top" secondItem="Qfc-Ax-P2g" secondAttribute="bottom" constant="10" id="RfJ-ao-OS5"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Qfc-Ax-P2g" secondAttribute="trailing" constant="16" id="koP-op-Qg5"/>
+                                                                    <constraint firstItem="A3q-4Z-TjD" firstAttribute="top" secondItem="A5C-mt-EZr" secondAttribute="bottom" constant="6" id="mqE-q4-CWB"/>
+                                                                    <constraint firstItem="Qfc-Ax-P2g" firstAttribute="leading" secondItem="Shw-uG-Mfc" secondAttribute="leading" constant="16" id="w57-4W-A6w"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pll-gg-Joq" userLabel="Find ID Button">
+                                                        <rect key="frame" x="0.0" y="432.33333333333337" width="354" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="54" id="j11-OE-i3e"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="아이디 찾기"/>
+                                                        <connections>
+                                                            <action selector="didTapFindIdButton:" destination="lKa-fk-FRa" eventType="touchUpInside" id="WbK-pH-AhR"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="S1V-CF-ybQ" secondAttribute="trailing" constant="24" id="1rp-as-oC9"/>
+                                            <constraint firstItem="S1V-CF-ybQ" firstAttribute="top" secondItem="9Yb-qB-2K1" secondAttribute="top" constant="16" id="9U5-8C-YfI"/>
+                                            <constraint firstAttribute="bottom" secondItem="S1V-CF-ybQ" secondAttribute="bottom" constant="16" id="AMl-qj-ePm"/>
+                                            <constraint firstItem="S1V-CF-ybQ" firstAttribute="leading" secondItem="9Yb-qB-2K1" secondAttribute="leading" constant="24" id="sPx-Vs-ttR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9Yb-qB-2K1" firstAttribute="top" secondItem="y78-wE-Ppf" secondAttribute="top" id="7VS-Vp-fQf"/>
+                                    <constraint firstItem="9Yb-qB-2K1" firstAttribute="leading" secondItem="y78-wE-Ppf" secondAttribute="leading" id="GTn-4u-ZSJ"/>
+                                    <constraint firstItem="9Yb-qB-2K1" firstAttribute="width" secondItem="vg6-Kz-VZa" secondAttribute="width" id="LGH-8p-a4K"/>
+                                    <constraint firstItem="9Yb-qB-2K1" firstAttribute="bottom" secondItem="y78-wE-Ppf" secondAttribute="bottom" id="nCm-HO-dbS"/>
+                                    <constraint firstItem="9Yb-qB-2K1" firstAttribute="trailing" secondItem="y78-wE-Ppf" secondAttribute="trailing" id="uIe-wO-0ru"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="y78-wE-Ppf"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="vg6-Kz-VZa"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oKa-cc-Sbp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FsB-Wu-9bt" firstAttribute="leading" secondItem="oKa-cc-Sbp" secondAttribute="leading" id="2GZ-Jq-tCk"/>
+                            <constraint firstItem="FsB-Wu-9bt" firstAttribute="top" secondItem="oKa-cc-Sbp" secondAttribute="top" id="6sQ-j7-0NB"/>
+                            <constraint firstItem="oKa-cc-Sbp" firstAttribute="bottom" secondItem="FsB-Wu-9bt" secondAttribute="bottom" id="SSW-U6-U2V"/>
+                            <constraint firstItem="oKa-cc-Sbp" firstAttribute="trailing" secondItem="FsB-Wu-9bt" secondAttribute="trailing" id="aSJ-Qp-kKV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iJp-Ln-6LM"/>
+                    <connections>
+                        <outlet property="emailCheckButton" destination="R0b-1K-dQR" id="1qR-w3-fAg"/>
+                        <outlet property="emailContainerView" destination="ZgX-qj-vWc" id="IO5-Gj-OGu"/>
+                        <outlet property="emailGuideLabel" destination="gLo-bj-LcJ" id="YfB-gN-qu5"/>
+                        <outlet property="emailTextField" destination="2X9-ql-bNi" id="wUp-6q-5Rv"/>
+                        <outlet property="emailVerificationStackView" destination="67n-VE-kuf" id="pez-wq-uOE"/>
+                        <outlet property="findIdButton" destination="Pll-gg-Joq" id="xoG-AQ-cxB"/>
+                        <outlet property="verificationCheckButton" destination="COw-cP-8U2" id="BR3-Hg-Ycp"/>
+                        <outlet property="verificationContainerView" destination="Shw-uG-Mfc" id="fdH-cm-MB6"/>
+                        <outlet property="verificationGuideLabel" destination="A3q-4Z-TjD" id="Y4o-Hu-7GA"/>
+                        <outlet property="verificationInputView" destination="A5C-mt-EZr" id="WZP-Ls-I95"/>
+                        <outlet property="verificationTextField" destination="uC4-mX-X5w" id="7w4-tE-gLk"/>
+                        <outlet property="verificationTimerLabel" destination="JKZ-xW-M3R" id="xYG-cb-pyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RyL-lU-4AE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="-595"/>
+            <point key="canvasLocation" x="2032.8358208955224" y="-595.19450800915331"/>
         </scene>
         <!--Find Password View Controller-->
         <scene sceneID="woN-Jp-0gF">

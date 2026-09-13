@@ -224,7 +224,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         guard let id = loginIdTextField.text, !id.trimmingCharacters(in: .whitespaces).isEmpty else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "아이디를 입력해주세요."
             )
             return
@@ -233,7 +232,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordTextField.text, !password.isEmpty else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "비밀번호를 입력해주세요."
             )
             return

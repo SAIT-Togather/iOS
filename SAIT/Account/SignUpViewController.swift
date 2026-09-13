@@ -209,6 +209,16 @@ class SignUpViewController: UIViewController {
         // TODO: 서버 이메일 인증 API 연결
         // 테스트 코드
         isEmailVerified = false
+        
+        verificationTextField.isEnabled = true
+        verificationCheckButton.isEnabled = true
+        
+        verificationInputView.backgroundColor = .clear
+        verificationTextField.textColor = .label
+        verificationCheckButton.alpha = 1
+        
+        showEmailCodeSent()
+        
         emailVerificationStackView.isHidden = false
         
         verificationGuideLabel.text = "인증번호 6자리를 입력해주세요."
@@ -444,6 +454,8 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func verificationTextFieldDidChange() {
+        isEmailVerified = false
+        
         guard let text = verificationTextField.text else { return }
         
         let numbersOnly = text.filter { $0.isNumber }
@@ -475,6 +487,13 @@ class SignUpViewController: UIViewController {
         verificationTimer = nil
         
         isEmailVerified = true
+        
+        verificationTextField.isEnabled = false
+        verificationCheckButton.isEnabled = false
+        
+        verificationInputView.backgroundColor = UIColor.systemGray6
+        verificationTextField.textColor = .secondaryLabel
+        verificationCheckButton.alpha = 0.5
         
         let config = UIImage.SymbolConfiguration(
             pointSize: 17,
@@ -907,7 +926,6 @@ class SignUpViewController: UIViewController {
         guard isIdChecked else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "ID 중복확인을 해주세요."
             )
             return
@@ -916,7 +934,6 @@ class SignUpViewController: UIViewController {
         guard isEmailVerified else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "이메일 인증을 완료해주세요"
             )
             return
@@ -926,7 +943,6 @@ class SignUpViewController: UIViewController {
               !password.isEmpty else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "비밀번호를 입력해주세요."
             )
             return
@@ -936,7 +952,6 @@ class SignUpViewController: UIViewController {
               !passwordConfirm.isEmpty else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "비밀번호 확인을 입력해주세요."
             )
             return
@@ -945,7 +960,6 @@ class SignUpViewController: UIViewController {
         guard password == passwordConfirm else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "비밀번호가 일치하지 않습니다."
             )
             return
@@ -956,7 +970,6 @@ class SignUpViewController: UIViewController {
               !nickname.isEmpty else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "닉네임을 입력해주세요."
             )
             return
@@ -966,7 +979,6 @@ class SignUpViewController: UIViewController {
               !birth.isEmpty else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "생년월일을 선택해주세요."
             )
             return
@@ -975,7 +987,6 @@ class SignUpViewController: UIViewController {
         guard isTermsAgreed && isPrivacyAgreed else {
             Util.showAlert(
                 on: self,
-                title: "SAIT",
                 message: "필수 약관에 동의해주세요."
             )
             return

@@ -12,11 +12,10 @@ class Util {
     
     static func showAlert(
         on viewController: UIViewController,
-        title: String,
         message: String
     ) {
         let alert = UIAlertController(
-            title: title,
+            title: "SAIT",
             message: message,
             preferredStyle: .alert
         )
