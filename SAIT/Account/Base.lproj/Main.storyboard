@@ -1894,6 +1894,7 @@
                         <outlet property="passwordTextField" destination="70z-AD-gI8" id="qEd-Qc-3uC"/>
                         <outlet property="passwordToggleButton" destination="gRX-RF-g3k" id="T7X-T4-kgs"/>
                         <outlet property="privacyAgreementButton" destination="ql9-wQ-YR6" id="VwY-fV-4Fs"/>
+                        <outlet property="scrollView" destination="gra-KG-IRx" id="tLB-uV-fHx"/>
                         <outlet property="signUpButton" destination="ONO-yZ-JhQ" id="c0P-WQ-UjO"/>
                         <outlet property="termsAgreementButton" destination="Pxi-TM-Q6b" id="dPy-a2-Kqz"/>
                         <outlet property="verificationCheckButton" destination="Eda-sE-YIw" id="gFq-dr-zan"/>
