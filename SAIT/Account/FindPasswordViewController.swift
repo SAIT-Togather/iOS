@@ -513,7 +513,12 @@ class FindPasswordViewController: UIViewController {
         print("이메일:", email)
         
         // TODO: 서버에서 아이디와 이메일 일치 여부 확인
-        // TODO: 비밀번호 재설정 화면으로 이동
+        
+        performSegue(
+            withIdentifier: "showResetPassword",
+            sender: nil
+        )
+        
     }
     
     private func configureResetPasswordButton() {

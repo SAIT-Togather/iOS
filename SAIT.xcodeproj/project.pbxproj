@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D320AD0130975E7700AA0A95 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */; };
+		D320AD0330A0832600AA0A95 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0230A0832600AA0A95 /* KeyboardManager.swift */; };
 		D37D7703303DE11A006F67A6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D7702303DE11A006F67A6 /* Util.swift */; };
 		D37D770530568D23006F67A6 /* FindIDResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D770430568D23006F67A6 /* FindIDResultViewController.swift */; };
 		D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB36ED3001215900182A0E /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		D320AD0230A0832600AA0A95 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		D37D7702303DE11A006F67A6 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D37D770430568D23006F67A6 /* FindIDResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDResultViewController.swift; sourceTree = "<group>"; };
 		D3EB36C33001203100182A0E /* SAIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				D37D7702303DE11A006F67A6 /* Util.swift */,
+				D320AD0230A0832600AA0A95 /* KeyboardManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				D320AD0130975E7700AA0A95 /* ResetPasswordViewController.swift in Sources */,
 				D3EB370730013C5500182A0E /* FindIDViewController.swift in Sources */,
+				D320AD0330A0832600AA0A95 /* KeyboardManager.swift in Sources */,
 				D3EB37033001265C00182A0E /* LoginViewController.swift in Sources */,
 				D3EB370930013C5E00182A0E /* FindPasswordViewController.swift in Sources */,
 				D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */,
