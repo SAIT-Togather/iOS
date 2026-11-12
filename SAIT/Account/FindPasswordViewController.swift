@@ -7,8 +7,12 @@
 
 import UIKit
 
-class FindPasswordViewController: UIViewController {
+class FindPasswordViewController: UIViewController, UITextFieldDelegate {
 
+    private var keyboardManager: KeyboardManager?
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     // =========================
     // MARK: View LifeCycle Func
     // =========================
@@ -20,12 +24,29 @@ class FindPasswordViewController: UIViewController {
         super.viewDidLoad()
 
         configureUI()
+        configureKeyboardManager()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        keyboardManager?.startObserving()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        keyboardManager?.stopObserving()
     }
     
     // ====================
     // MARK: User Interface
     // ====================
     private func configureUI() {
+        idTextField.delegate = self
+        emailTextField.delegate = self
+        verificationTextField.delegate = self
+        
         configureIDContainer()
         configureIDTextField()
         resetIDGuide()
@@ -43,6 +64,8 @@ class FindPasswordViewController: UIViewController {
         emailVerificationStackView.isHidden = true
         
         configureResetPasswordButton()
+        
+        configureKeyboardDismiss()
     }
     
     // ==============
@@ -541,6 +564,42 @@ class FindPasswordViewController: UIViewController {
             ofSize: 17,
             weight: .semibold
         )
+    }
+    
+    // ======================
+    // MARK: Keyboard Setting
+    // ======================
+    private func configureKeyboardManager() {
+        keyboardManager = KeyboardManager(scrollView: scrollView)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        keyboardManager?.setActiveTextField(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        keyboardManager?.clearActiveTextField()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    private func configureKeyboardDismiss() {
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+        
+        tapGesture.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

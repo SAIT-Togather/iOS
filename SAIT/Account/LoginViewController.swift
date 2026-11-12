@@ -8,6 +8,9 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    private var keyboardManager: KeyboardManager?
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentView: UIView!
     
@@ -21,6 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         scrollView.showsVerticalScrollIndicator = false
 
         configureUI()
+        configureKeyboardManager()
     }
     
     /// 2026.08.08
@@ -49,12 +53,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        keyboardManager?.startObserving()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        keyboardManager?.stopObserving()
     }
     
     // ====================
@@ -73,6 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         configureFindButtons()
         configureSignUpButton()
         
+        configureKeyboardDismiss()
     }
     
     // ==================
@@ -272,6 +281,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //        loginIdTextField.keyboardType = .asciiCapable
         loginIdTextField.autocapitalizationType = .none
         loginIdTextField.autocorrectionType = .no
+        loginIdTextField.returnKeyType = .next
         
         // 테두리
         loginIdTextField.borderStyle = .none
@@ -317,6 +327,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func configurePasswordTextField() {
+        // return 키 동작
+        passwordTextField.returnKeyType = .done
+        
         // Placeholder 색상
         let placeholderColor = UIColor(
             red: 165 / 255,
@@ -508,6 +521,45 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         )
         
         signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+    }
+    
+    // ======================
+    // MARK: Keyboard Setting
+    // ======================
+    private func configureKeyboardManager() {
+        keyboardManager = KeyboardManager(scrollView: scrollView)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        keyboardManager?.setActiveTextField(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        keyboardManager?.clearActiveTextField()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginIdTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    private func configureKeyboardDismiss() {
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+        tapGesture.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

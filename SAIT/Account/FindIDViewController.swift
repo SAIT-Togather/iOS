@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FindIDViewController: UIViewController {
+class FindIDViewController: UIViewController, UITextFieldDelegate {
+    
+    private var keyboardManager: KeyboardManager?
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // =========================
     // MARK: View LifeCycle Func
@@ -16,6 +20,19 @@ class FindIDViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        configureKeybaordManager()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        keyboardManager?.startObserving()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        keyboardManager?.stopObserving()
     }
     
     override func prepare(
@@ -34,6 +51,9 @@ class FindIDViewController: UIViewController {
     // MARK: User Interface
     // ====================
     private func configureUI() {
+        emailTextField.delegate = self
+        verificationTextField.delegate = self
+        
         configureEmailContainer()
         configureEmailTextField()
         configureEmailCheckButton()
@@ -46,6 +66,8 @@ class FindIDViewController: UIViewController {
         emailVerificationStackView.isHidden = true
         
         configureFindIdButton()
+        
+        configureKeyboardDismiss()
     }
     
     // ===================
@@ -449,6 +471,41 @@ class FindIDViewController: UIViewController {
             ofSize: 17,
             weight: .semibold
         )
+    }
+    
+    // ======================
+    // MARK: Keyboard Setting
+    // ======================
+    private func configureKeybaordManager() {
+        keyboardManager = KeyboardManager(scrollView: scrollView)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        keyboardManager?.setActiveTextField(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        keyboardManager?.clearActiveTextField()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    private func configureKeyboardDismiss() {
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+        
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

@@ -532,6 +532,7 @@
                         <outlet property="emailTextField" destination="2X9-ql-bNi" id="wUp-6q-5Rv"/>
                         <outlet property="emailVerificationStackView" destination="67n-VE-kuf" id="pez-wq-uOE"/>
                         <outlet property="findIdButton" destination="Pll-gg-Joq" id="xoG-AQ-cxB"/>
+                        <outlet property="scrollView" destination="FsB-Wu-9bt" id="OFv-tm-32w"/>
                         <outlet property="verificationCheckButton" destination="COw-cP-8U2" id="BR3-Hg-Ycp"/>
                         <outlet property="verificationContainerView" destination="Shw-uG-Mfc" id="fdH-cm-MB6"/>
                         <outlet property="verificationGuideLabel" destination="A3q-4Z-TjD" id="Y4o-Hu-7GA"/>
@@ -1000,6 +1001,7 @@
                         <outlet property="idGuideLabel" destination="A5a-zy-a7x" id="i5l-DD-f6g"/>
                         <outlet property="idTextField" destination="TS7-AI-tYa" id="YYZ-j6-oUc"/>
                         <outlet property="resetPasswordButton" destination="ZKp-BX-Rf1" id="8gw-lz-Tj8"/>
+                        <outlet property="scrollView" destination="j4u-ag-9zk" id="vPF-5y-Ntp"/>
                         <outlet property="verificationCheckButton" destination="NhL-qX-7LO" id="znm-1G-3al"/>
                         <outlet property="verificationContainerView" destination="w5z-Eq-NfO" id="2PC-sY-QaX"/>
                         <outlet property="verificationGuideLabel" destination="kNL-Sb-S0Q" id="iCJ-tn-FeR"/>
