@@ -9,8 +9,25 @@
 /* Begin PBXBuildFile section */
 		D320AD0130975E7700AA0A95 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */; };
 		D320AD0330A0832600AA0A95 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0230A0832600AA0A95 /* KeyboardManager.swift */; };
+		D320AD0730A5E90A00AA0A95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0630A5E90A00AA0A95 /* MainTabView.swift */; };
+		D320AD0930A5E93F00AA0A95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0830A5E93F00AA0A95 /* HomeView.swift */; };
+		D320AD0B30A5E94E00AA0A95 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0A30A5E94E00AA0A95 /* CalendarView.swift */; };
+		D320AD0D30A5E96400AA0A95 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0C30A5E96400AA0A95 /* MemoryView.swift */; };
+		D320AD0F30A5E96F00AA0A95 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0E30A5E96F00AA0A95 /* PlaceView.swift */; };
+		D320AD1130A5E97D00AA0A95 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD1030A5E97D00AA0A95 /* MyPageView.swift */; };
+		D320AD1430A5EC0000AA0A95 /* SAITColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD1330A5EC0000AA0A95 /* SAITColors.swift */; };
 		D37D7703303DE11A006F67A6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D7702303DE11A006F67A6 /* Util.swift */; };
 		D37D770530568D23006F67A6 /* FindIDResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D770430568D23006F67A6 /* FindIDResultViewController.swift */; };
+		D3AF165530A88CD90042389E /* CoupleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165430A88CD90042389E /* CoupleSchedule.swift */; };
+		D3AF165730A898A10042389E /* CoupleMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165630A898A10042389E /* CoupleMemory.swift */; };
+		D3AF165A30A89DF60042389E /* SAITCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165930A89DF60042389E /* SAITCard.swift */; };
+		D3AF165D30A8A0890042389E /* CoupleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165C30A8A0890042389E /* CoupleCardView.swift */; };
+		D3AF165F30A8A1AF0042389E /* AnniversaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165E30A8A1AF0042389E /* AnniversaryCardView.swift */; };
+		D3AF166130A8A32C0042389E /* NextDateCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF166030A8A32C0042389E /* NextDateCardView.swift */; };
+		D3AF166330A8A3CA0042389E /* RecentMemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF166230A8A3CA0042389E /* RecentMemoriesView.swift */; };
+		D3AF166530A8A4780042389E /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF166430A8A4780042389E /* HomeHeaderView.swift */; };
+		D3AF166830A8A5590042389E /* DateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF166730A8A5590042389E /* DateCalculator.swift */; };
+		D3AF166B30A8A7CD0042389E /* HomeMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF166A30A8A7CD0042389E /* HomeMockData.swift */; };
 		D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB36ED3001215900182A0E /* AppDelegate.swift */; };
 		D3EB36F93001215900182A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB36F53001215900182A0E /* SceneDelegate.swift */; };
 		D3EB36FB3001215900182A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EB36EE3001215900182A0E /* Assets.xcassets */; };
@@ -26,8 +43,25 @@
 /* Begin PBXFileReference section */
 		D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D320AD0230A0832600AA0A95 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		D320AD0630A5E90A00AA0A95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		D320AD0830A5E93F00AA0A95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D320AD0A30A5E94E00AA0A95 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D320AD0C30A5E96400AA0A95 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
+		D320AD0E30A5E96F00AA0A95 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		D320AD1030A5E97D00AA0A95 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		D320AD1330A5EC0000AA0A95 /* SAITColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAITColors.swift; sourceTree = "<group>"; };
 		D37D7702303DE11A006F67A6 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D37D770430568D23006F67A6 /* FindIDResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDResultViewController.swift; sourceTree = "<group>"; };
+		D3AF165430A88CD90042389E /* CoupleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleSchedule.swift; sourceTree = "<group>"; };
+		D3AF165630A898A10042389E /* CoupleMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleMemory.swift; sourceTree = "<group>"; };
+		D3AF165930A89DF60042389E /* SAITCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAITCard.swift; sourceTree = "<group>"; };
+		D3AF165C30A8A0890042389E /* CoupleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleCardView.swift; sourceTree = "<group>"; };
+		D3AF165E30A8A1AF0042389E /* AnniversaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryCardView.swift; sourceTree = "<group>"; };
+		D3AF166030A8A32C0042389E /* NextDateCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDateCardView.swift; sourceTree = "<group>"; };
+		D3AF166230A8A3CA0042389E /* RecentMemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMemoriesView.swift; sourceTree = "<group>"; };
+		D3AF166430A8A4780042389E /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		D3AF166730A8A5590042389E /* DateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCalculator.swift; sourceTree = "<group>"; };
+		D3AF166A30A8A7CD0042389E /* HomeMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockData.swift; sourceTree = "<group>"; };
 		D3EB36C33001203100182A0E /* SAIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EB36ED3001215900182A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3EB36EE3001215900182A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +87,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D320AD0430A5E89B00AA0A95 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D320AD0630A5E90A00AA0A95 /* MainTabView.swift */,
+				D320AD0830A5E93F00AA0A95 /* HomeView.swift */,
+				D3AF165B30A8A00D0042389E /* HomeComponents */,
+				D320AD0A30A5E94E00AA0A95 /* CalendarView.swift */,
+				D320AD0C30A5E96400AA0A95 /* MemoryView.swift */,
+				D320AD0E30A5E96F00AA0A95 /* PlaceView.swift */,
+				D320AD1030A5E97D00AA0A95 /* MyPageView.swift */,
+				D3AF166630A8A5290042389E /* Helpers */,
+				D3AF166930A8A7A50042389E /* MockData */,
+				D3AF165330A88C360042389E /* Models */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D320AD1230A5EBE000AA0A95 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				D320AD1330A5EC0000AA0A95 /* SAITColors.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		D37D7701303DE0F5006F67A6 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +119,51 @@
 				D320AD0230A0832600AA0A95 /* KeyboardManager.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		D3AF165330A88C360042389E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF165430A88CD90042389E /* CoupleSchedule.swift */,
+				D3AF165630A898A10042389E /* CoupleMemory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3AF165830A89DD90042389E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF165930A89DF60042389E /* SAITCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D3AF165B30A8A00D0042389E /* HomeComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF166430A8A4780042389E /* HomeHeaderView.swift */,
+				D3AF165C30A8A0890042389E /* CoupleCardView.swift */,
+				D3AF165E30A8A1AF0042389E /* AnniversaryCardView.swift */,
+				D3AF166030A8A32C0042389E /* NextDateCardView.swift */,
+				D3AF166230A8A3CA0042389E /* RecentMemoriesView.swift */,
+			);
+			path = HomeComponents;
+			sourceTree = "<group>";
+		};
+		D3AF166630A8A5290042389E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF166730A8A5590042389E /* DateCalculator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D3AF166930A8A7A50042389E /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				D3AF166A30A8A7CD0042389E /* HomeMockData.swift */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		D3E02233302A44E60037B457 /* Account */ = {
@@ -100,6 +204,9 @@
 				D3EB36F13001215900182A0E /* LaunchScreen.storyboard */,
 				D3EB36F53001215900182A0E /* SceneDelegate.swift */,
 				D3E02233302A44E60037B457 /* Account */,
+				D320AD0430A5E89B00AA0A95 /* Main */,
+				D3AF165830A89DD90042389E /* Components */,
+				D320AD1230A5EBE000AA0A95 /* Theme */,
 				D37D7701303DE0F5006F67A6 /* Util */,
 				D3EB37003001221000182A0E /* Resource */,
 			);
@@ -191,13 +298,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				D320AD0130975E7700AA0A95 /* ResetPasswordViewController.swift in Sources */,
+				D3AF165730A898A10042389E /* CoupleMemory.swift in Sources */,
+				D3AF166130A8A32C0042389E /* NextDateCardView.swift in Sources */,
+				D3AF166830A8A5590042389E /* DateCalculator.swift in Sources */,
 				D3EB370730013C5500182A0E /* FindIDViewController.swift in Sources */,
+				D3AF165530A88CD90042389E /* CoupleSchedule.swift in Sources */,
 				D320AD0330A0832600AA0A95 /* KeyboardManager.swift in Sources */,
+				D320AD1430A5EC0000AA0A95 /* SAITColors.swift in Sources */,
+				D3AF165D30A8A0890042389E /* CoupleCardView.swift in Sources */,
+				D3AF165F30A8A1AF0042389E /* AnniversaryCardView.swift in Sources */,
 				D3EB37033001265C00182A0E /* LoginViewController.swift in Sources */,
 				D3EB370930013C5E00182A0E /* FindPasswordViewController.swift in Sources */,
+				D320AD0730A5E90A00AA0A95 /* MainTabView.swift in Sources */,
+				D320AD0B30A5E94E00AA0A95 /* CalendarView.swift in Sources */,
+				D320AD0D30A5E96400AA0A95 /* MemoryView.swift in Sources */,
 				D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */,
+				D3AF165A30A89DF60042389E /* SAITCard.swift in Sources */,
+				D3AF166530A8A4780042389E /* HomeHeaderView.swift in Sources */,
+				D3AF166B30A8A7CD0042389E /* HomeMockData.swift in Sources */,
+				D3AF166330A8A3CA0042389E /* RecentMemoriesView.swift in Sources */,
+				D320AD1130A5E97D00AA0A95 /* MyPageView.swift in Sources */,
 				D37D7703303DE11A006F67A6 /* Util.swift in Sources */,
 				D3EB36F93001215900182A0E /* SceneDelegate.swift in Sources */,
+				D320AD0930A5E93F00AA0A95 /* HomeView.swift in Sources */,
+				D320AD0F30A5E96F00AA0A95 /* PlaceView.swift in Sources */,
 				D37D770530568D23006F67A6 /* FindIDResultViewController.swift in Sources */,
 				D3EB370530013A5A00182A0E /* SignUpViewController.swift in Sources */,
 			);
