@@ -118,4 +118,19 @@ enum CalendarCalculator {
         calendar.isDateInToday(date)
     }
     
+    static func date(
+        bySettingHour hour: Int,
+        minute: Int,
+        for date: Date
+    ) -> Date {
+        let calendar = Calendar.current
+        
+        return calendar.date(
+            bySettingHour: hour,
+            minute: minute,
+            second: 0,
+            of: date
+        ) ?? date
+    }
+    
 }

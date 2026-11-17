@@ -31,6 +31,8 @@ struct CalendarView: View {
             }
     }
     
+    @State private var isShowingAddSchedule = false
+    
     // MARK: - Body
     
     var body: some View {
@@ -48,8 +50,7 @@ struct CalendarView: View {
                     
                     CalendarHeaderView(
                         onAddSchedule: {
-                            // 추후 일정 등록 화면 연결
-                            print("일정 등록")
+                            isShowingAddSchedule = true
                         }
                     )
                     
@@ -79,6 +80,14 @@ struct CalendarView: View {
                 .padding(.bottom, 32)
             }
         }
+        .sheet(isPresented: $isShowingAddSchedule) {
+            CalendarScheduleAddView(
+                initialDate: selectedDate,
+                onSave: { schedule in
+                    addSchedule(schedule)
+                }
+            )
+        }
     }
     
 }
@@ -94,6 +103,16 @@ private extension CalendarView {
         )
         
         selectedDate = displayedMonth
+    }
+    
+    func addSchedule(_ schedule: CoupleSchedule) {
+        schedules.append(schedule)
+        
+        selectedDate = schedule.date
+        
+        displayedMonth = CalendarCalculator.startOfMonth(
+            for: schedule.date
+        )
     }
     
 }
