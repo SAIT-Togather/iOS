@@ -13,9 +13,9 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    // =========================
-    // MARK: View LifeCycle Func
-    // =========================
+    
+    // MARK: - View LifeCycle Func
+    
     deinit {
         verificationTimer?.invalidate()
     }
@@ -39,9 +39,9 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
         keyboardManager?.stopObserving()
     }
     
-    // ====================
-    // MARK: User Interface
-    // ====================
+    
+    // MARK: - User Interface
+    
     private func configureUI() {
         idTextField.delegate = self
         emailTextField.delegate = self
@@ -68,9 +68,9 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
         configureKeyboardDismiss()
     }
     
-    // ==============
-    // MARK: ID Field
-    // ==============
+    
+    // MARK: - ID Field
+    
     @IBOutlet weak var idContainerView: UIView!
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var idGuideLabel: UILabel!
@@ -129,9 +129,9 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
         resetVerificationUI()
     }
     
-    // =================
-    // MARK: Email Field
-    // =================
+    
+    // MARK: - Email Field
+    
     @IBOutlet weak var emailContainerView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailCheckButton: UIButton!
@@ -278,9 +278,9 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // ==============================
-    // MARK: Email Verification Field
-    // ==============================
+    
+    // MARK: - Email Verification Field
+    
     @IBOutlet weak var emailVerificationStackView: UIStackView!
     @IBOutlet weak var verificationContainerView: UIView!
     @IBOutlet weak var verificationInputView: UIView!
@@ -500,9 +500,9 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // ===========================
-    // MARK: Reset Password Button
-    // ===========================
+    
+    // MARK: - Reset Password Button
+    
     @IBOutlet weak var resetPasswordButton: UIButton!
     
     @IBAction func didTapResetPasswordButton(_ sender: Any) {
@@ -566,9 +566,9 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // ======================
-    // MARK: Keyboard Setting
-    // ======================
+    
+    // MARK: - Keyboard Setting
+    
     private func configureKeyboardManager() {
         keyboardManager = KeyboardManager(scrollView: scrollView)
     }

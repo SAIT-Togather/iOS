@@ -13,9 +13,9 @@ class FindIDViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    // =========================
-    // MARK: View LifeCycle Func
-    // =========================
+    
+    // MARK: - View LifeCycle Func
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,9 +47,9 @@ class FindIDViewController: UIViewController, UITextFieldDelegate {
         resultVC.foundId = "dleodudi"
     }
     
-    // ====================
-    // MARK: User Interface
-    // ====================
+    
+    // MARK: - User Interface
+    
     private func configureUI() {
         emailTextField.delegate = self
         verificationTextField.delegate = self
@@ -70,9 +70,9 @@ class FindIDViewController: UIViewController, UITextFieldDelegate {
         configureKeyboardDismiss()
     }
     
-    // ===================
-    // MARK: Find ID Field
-    // ===================
+    
+    // MARK: - Find ID Field
+    
     private var verificationTimer: Timer?
     private var verificationTimerLeft = 300
     private var isEmailVerified = false
@@ -222,9 +222,9 @@ class FindIDViewController: UIViewController, UITextFieldDelegate {
         verificationCheckButton.alpha = 1.0
     }
     
-    // ==============================
-    // MARK: Email Verification Field
-    // ==============================
+    
+    // MARK: - Email Verification Field
+    
     @IBOutlet weak var emailVerificationStackView: UIStackView!
     @IBOutlet weak var verificationContainerView: UIView!
     @IBOutlet weak var verificationInputView: UIView!
@@ -429,9 +429,9 @@ class FindIDViewController: UIViewController, UITextFieldDelegate {
         verificationGuideLabel.textColor = .systemGreen
     }
     
-    // ====================
-    // MARK: Find ID Button
-    // ====================
+    
+    // MARK: - Find ID Button
+    
     @IBOutlet weak var findIdButton: UIButton!
     
     @IBAction func didTapFindIdButton(_ sender: Any) {
@@ -473,9 +473,9 @@ class FindIDViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // ======================
-    // MARK: Keyboard Setting
-    // ======================
+    
+    // MARK: - Keyboard Setting
+    
     private func configureKeybaordManager() {
         keyboardManager = KeyboardManager(scrollView: scrollView)
     }

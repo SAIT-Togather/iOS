@@ -10,9 +10,9 @@ import UIKit
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     private var keyboardManager: KeyboardManager?
     
-    // =========================
-    // MARK: View LifeCycle Func
-    // =========================
+    
+    // MARK: - View LifeCycle Func
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +32,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         keyboardManager?.stopObserving()
     }
     
-    // ====================
-    // MARK: User Interface
-    // ====================
+    
+    // MARK: - User Interface
+    
     private func configureUI() {
         configureIdContainer()
         configureIdTextField()
@@ -71,9 +71,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         configureKeyboardDismiss()
     }
     
-    // ==============
-    // MARK: ID Field
-    // ==============
+    
+    // MARK: - ID Field
+    
     private var isIdChecked = false
     
     @IBOutlet weak var idContainerView: UIView!
@@ -196,9 +196,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         resetIdGuide()
     }
     
-    // =================
-    // MARK: Email Field
-    // =================
+    
+    // MARK: - Email Field
+    
     private var verificationTimer: Timer?
     private var verificationTimerLeft = 300
     private var isEmailVerified = false
@@ -351,9 +351,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         verificationCheckButton.alpha = 1.0
     }
     
-    // ==============================
-    // MARK: Email Verification Field
-    // ==============================
+    
+    // MARK: - Email Verification Field
+    
     @IBOutlet weak var emailVerificationStackView: UIStackView!
     @IBOutlet weak var verificationContainerView: UIView!
     @IBOutlet weak var verificationInputView: UIView!
@@ -558,9 +558,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         verificationGuideLabel.textColor = .systemGreen
     }
     
-    // ====================
-    // MARK: Password Field
-    // ====================
+    
+    // MARK: - Password Field
+    
     @IBOutlet weak var passwordContainerView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordToggleButton: UIButton!
@@ -664,9 +664,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // ====================
-    // MARK: Nickname Field
-    // ====================
+    
+    // MARK: - Nickname Field
+    
     @IBOutlet weak var nicknameContainerView: UIView!
     @IBOutlet weak var nicknameTextField: UITextField!
     
@@ -690,9 +690,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         nicknameTextField.autocapitalizationType = .none
     }
     
-    // =================
-    // MARK: Birth Field
-    // =================
+    
+    // MARK: - Birth Field
+    
     private let birthDatePicker = UIDatePicker()
     
     @IBOutlet weak var birthContainerView: UIView!
@@ -793,9 +793,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // =====================
-    // MARK: Agreement Field
-    // =====================
+    
+    // MARK: - Agreement Field
+    
     private var isTermsAgreed = false
     private var isPrivacyAgreed = false
     private var isMarketingAgreed = false
@@ -955,9 +955,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // ====================
-    // MARK: Sign Up Button
-    // ====================
+    
+    // MARK: - Sign Up Button
+    
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func didTapSignUpButton(_ sender: Any) {
@@ -1056,9 +1056,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    // ======================
-    // MARK: Keyboard Setting
-    // ======================
+    
+    // MARK: - Keyboard Setting
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     private func configureKeyboardManager() {

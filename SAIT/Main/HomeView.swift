@@ -27,18 +27,22 @@ struct HomeView: View {
                 VStack(spacing: 24) {
                     
                     // MARK: - Header
+                    
                     HomeHeaderView {
                         // TODO: 추후 알림 화면으로 변경
                     }
                     
                     // MARK: - Couple Card
+                    
                     CoupleCardView(
                         daysTogether: daysTogether,
                         relationshipStartDate: relationshipStartDate
                     )
                     
                     VStack(spacing: 12) {
+                        
                         // MARK: - Anniversary Card
+                       
                         AnniversaryCardView(
                             days: nextAnniversary?.days,
                             date: nextAnniversary?.date,
@@ -46,6 +50,7 @@ struct HomeView: View {
                         )
                         
                         // MARK: - Next Date Card
+                        
                         NextDateCardView(
                             schedule: nextDateSchedule,
                             remainingDays: nextDateSchedule.map {
@@ -58,6 +63,7 @@ struct HomeView: View {
                     }
                     
                     // MARK: - Recent Memories
+                    
                     RecentMemoriesView(memories: recentMemories) {
                         // TODO: 추억 탭으로 이동
                     }
@@ -85,6 +91,7 @@ struct HomeView: View {
     }
     
     // MARK: - 연애 일수
+    
     private var daysTogether: Int? {
         guard let startDate = relationshipStartDate else {
             return nil
@@ -97,6 +104,7 @@ struct HomeView: View {
     }
     
     // MARK: - 다음 기념일
+    
     private var nextAnniversary: Anniversary? {
         guard let startDate = relationshipStartDate else {
             return nil
@@ -109,6 +117,7 @@ struct HomeView: View {
     }
     
     // MARK: - 다음 데이트
+    
     private var nextDateSchedule: CoupleSchedule? {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: currentDate)
@@ -123,6 +132,7 @@ struct HomeView: View {
     }
     
     // MARK: - 최근 추억 정렬
+    
     private var recentMemories: [CoupleMemory] {
         Array(
             memories

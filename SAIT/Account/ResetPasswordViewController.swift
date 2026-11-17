@@ -11,9 +11,9 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
 
     private var keyboardManager: KeyboardManager?
     
-    // =========================
-    // MARK: View LifeCycle Func
-    // =========================
+    
+    // MARK: - View LifeCycle Func
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,9 +33,9 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
         keyboardManager?.stopObserving()
     }
     
-    // ====================
-    // MARK: User Interface
-    // ====================
+    
+    // MARK: - User Interface
+    
     private func configureUI() {
         configurePasswordUI()
         configureCompleteResetButton()
@@ -54,9 +54,9 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
         configureKeyboardDismiss()
     }
     
-    // ====================
-    // MARK: Password Field
-    // ====================
+    
+    // MARK: - Password Field
+    
     @IBOutlet weak var passwordContainerView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordToggleButton: UIButton!
@@ -122,9 +122,9 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
         passwordConfirmTextField.isSecureTextEntry = true
     }
     
-    // ========================
-    // MARK: Reset Button Field
-    // ========================
+    
+    // MARK: - Reset Button Field
+    
     @IBOutlet weak var completeResetButton: UIButton!
     
     @IBAction func didTapCompleteResetButton(_ sender: UIButton) {
@@ -232,9 +232,9 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
         completeResetButton.clipsToBounds = true
     }
     
-    // ======================
-    // MARK: Keyboard Setting
-    // ======================
+    
+    // MARK: - Keyboard Setting
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     private func configureKeyboardManager() {

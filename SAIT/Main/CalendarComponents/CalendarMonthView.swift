@@ -89,7 +89,7 @@ private extension CalendarMonthView {
     
 }
 
-// MARK: Calendar Grid
+// MARK: - Calendar Grid
 
 private extension CalendarMonthView {
     

@@ -14,9 +14,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentView: UIView!
     
-    // =========================
-    // MARK: View LifeCycle Func
-    // =========================
+    
+    // MARK: - View LifeCycle Func
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,9 +65,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         keyboardManager?.stopObserving()
     }
     
-    // ====================
-    // MARK: User Interface
-    // ====================
+    
+    // MARK: - User Interface
+    
     private func configureUI() {
         title = ""
         
@@ -84,9 +84,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         configureKeyboardDismiss()
     }
     
-    // ==================
-    // MARK: Social Login
-    // ==================
+    
+    // MARK: - Social Login
+    
     @IBOutlet weak var appleLoginButton: UIButton!
     @IBOutlet weak var kakaoLoginButton: UIButton!
     @IBOutlet weak var naverLoginButton: UIButton!
@@ -180,7 +180,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         label.text = title
         label.textColor = foregroundColor
         label.font = .systemFont(ofSize: 16, weight: .semibold)
-//        label.textAlignment = .left
+        // label.textAlignment = .left
         label.isUserInteractionEnabled = false
 
         button.addSubview(imageView)
@@ -218,9 +218,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         ])
     }
     
-    // =================
-    // MARK: SAIT Login
-    // =================
+    
+    // MARK: - SAIT Login
+    
     @IBOutlet weak var loginIdTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -277,8 +277,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         )
         
         // 키보드
-//        loginIdTextField.keyboardType = .emailAddress
-//        loginIdTextField.keyboardType = .asciiCapable
+        // loginIdTextField.keyboardType = .emailAddress
+        // loginIdTextField.keyboardType = .asciiCapable
         loginIdTextField.autocapitalizationType = .none
         loginIdTextField.autocorrectionType = .no
         loginIdTextField.returnKeyType = .next
@@ -475,9 +475,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.clipsToBounds = true
     }
     
-    // ==================
-    // MARK: Find Account
-    // ==================
+    
+    // MARK: - Find Account
+    
     @IBOutlet weak var findIdButton: UIButton!
     @IBOutlet weak var separatorLabel: UILabel!
     @IBOutlet weak var findPasswordButton: UIButton!
@@ -502,9 +502,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         findPasswordButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .regular)
     }
     
-    // =============
-    // MARK: Sign Up
-    // =============
+    
+    // MARK: - Sign Up
+    
     @IBOutlet weak var signUpButton: UIButton!
     
     private func configureSignUpButton() {
@@ -523,9 +523,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         signUpButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
     }
     
-    // ======================
-    // MARK: Keyboard Setting
-    // ======================
+    
+    // MARK: - Keyboard Setting
+    
     private func configureKeyboardManager() {
         keyboardManager = KeyboardManager(scrollView: scrollView)
     }

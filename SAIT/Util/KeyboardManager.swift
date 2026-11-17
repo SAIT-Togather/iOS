@@ -10,24 +10,24 @@ import UIKit
 
 final class KeyboardManager {
     
-    // ================
-    // MARK: Properties
-    // ================
+    
+    // MARK: - Properties
+    
     private weak var scrollView: UIScrollView?
     private weak var activeTextField: UITextField?
     
     private var keyboardObservers: [NSObjectProtocol] = []
     
-    // =================
-    // MARK: Initializer
-    // =================
+    
+    // MARK: - Initializer
+    
     init(scrollView: UIScrollView) {
         self.scrollView = scrollView
     }
     
-    // ===================
-    // MARK: Public Method
-    // ===================
+    
+    // MARK: - Public Method
+    
     func startObserving() {
         guard keyboardObservers.isEmpty else {
             return
@@ -167,9 +167,9 @@ final class KeyboardManager {
         activeTextField = nil
     }
     
-    // ===================
-    // MARK: Deinitializer
-    // ===================
+    
+    // MARK: - Deinitializer
+    
     deinit {
         stopObserving()
     }

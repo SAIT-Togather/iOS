@@ -17,9 +17,9 @@ class FindIDResultViewController: UIViewController {
         foundIdLabel.text = foundId
     }
     
-    // ====================
-    // MARK: User Interface
-    // ====================
+    
+    // MARK: - User Interface
+    
     private func configureUI() {
         mainStackView.setCustomSpacing(
             32,
@@ -34,9 +34,9 @@ class FindIDResultViewController: UIViewController {
         configureGoToLoginButton()
     }
     
-    // =====================
-    // MARK: ID Result Field
-    // =====================
+    
+    // MARK: - ID Result Field
+    
     var foundId: String?
     
     @IBOutlet weak var mainStackView: UIStackView!
@@ -117,9 +117,9 @@ class FindIDResultViewController: UIViewController {
         copyButton.setTitle(nil, for: .normal)
     }
     
-    // ================================
-    // MARK: Find Password Button Field
-    // ================================
+    
+    // MARK: - Find Password Button Field
+    
     @IBOutlet weak var findPasswordButton: UIButton!
     
     @IBAction func didTapFindPasswordButton(_ sender: Any) {
@@ -163,9 +163,9 @@ class FindIDResultViewController: UIViewController {
         )
     }
     
-    // =============================
-    // MARK: Go To Login Page Button
-    // =============================
+    
+    // MARK: - Go To Login Page Button
+    
     @IBOutlet weak var goToLoginButton: UIButton!
     
     @IBAction func didTapGoToLoginButton(_ sender: Any) {

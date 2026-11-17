@@ -49,7 +49,7 @@ struct MainTabView: View {
     }
 }
 
-// MARK: Main tab
+// MARK: - Main tab
 
 enum MainTab: Hashable {
     case calendar
