@@ -13,6 +13,7 @@ struct CalendarScheduleListView: View {
     
     let selectedDate: Date
     let schedules: [CoupleSchedule]
+    let onSelectSchedule: (CoupleSchedule) -> Void
     
     // MARK: - Body
     
@@ -86,7 +87,10 @@ private extension CalendarScheduleListView {
             ForEach(schedules) { schedule in
                 
                 CalendarScheduleRow(
-                    schedule: schedule
+                    schedule: schedule,
+                    onSelect: {
+                        onSelectSchedule(schedule)
+                    }
                 )
             }
         }
@@ -130,7 +134,7 @@ private extension CalendarScheduleListView {
                 $0.date,
                 Date()
             )
-        }
+        }, onSelectSchedule: { _ in }
     )
     .padding(20)
     .background(SAITColors.background)

@@ -33,6 +33,8 @@ struct CalendarView: View {
     
     @State private var isShowingAddSchedule = false
     
+    @State private var selectedSchedule: CoupleSchedule?
+    
     // MARK: - Body
     
     var body: some View {
@@ -70,7 +72,10 @@ struct CalendarView: View {
                     
                     CalendarScheduleListView(
                         selectedDate: selectedDate,
-                        schedules: selectedDateSchedules
+                        schedules: selectedDateSchedules,
+                        onSelectSchedule: { schedule in
+                            selectedSchedule = schedule
+                        }
                     )
                     
                 }
@@ -86,6 +91,11 @@ struct CalendarView: View {
                 onSave: { schedule in
                     addSchedule(schedule)
                 }
+            )
+        }
+        .sheet(item: $selectedSchedule) { schedule in
+            CalendarScheduleDetailView(
+                schedule: schedule
             )
         }
     }

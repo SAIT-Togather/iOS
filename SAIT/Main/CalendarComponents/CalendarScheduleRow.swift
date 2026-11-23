@@ -12,35 +12,44 @@ struct CalendarScheduleRow: View {
     // MARK: - Properties
     
     let schedule: CoupleSchedule
+    let onSelect: () -> Void
     
     // MARK: - Body
     
     var body: some View {
-        HStack(spacing: 12) {
-            
-            Image(systemName: "heart")
-                .font(.system(size: 18, weight: .medium))
-                .foregroundStyle(SAITColors.primary)
-                .frame(width: 44, height: 44)
-                .background(SAITColors.lightBlue)
-                .clipShape(
-                    RoundedRectangle(cornerRadius: 12)
-                )
-            
-            VStack(alignment: .leading, spacing: 5) {
+        Button(action: onSelect) {
+            HStack(spacing: 12) {
                 
-                Text(schedule.title)
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(SAITColors.primaryText)
+                Image(systemName: "heart")
+                    .font(.system(size: 18, weight: .medium))
+                    .foregroundStyle(SAITColors.primary)
+                    .frame(width: 44, height: 44)
+                    .background(SAITColors.lightBlue)
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: 12)
+                    )
                 
-                Text("함께하는 소중한 시간")
-                    .font(.system(size: 12))
+                VStack(alignment: .leading, spacing: 5) {
+                    
+                    Text(schedule.title)
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(SAITColors.primaryText)
+                    
+                    Text("함께하는 소중한 시간")
+                        .font(.system(size: 12))
+                        .foregroundStyle(SAITColors.secondaryText)
+                }
+                
+                Spacer(minLength: 0)
+                
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(SAITColors.secondaryText)
             }
-            
-            Spacer(minLength: 0)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .buttonStyle(.plain)
     }
     
 }
@@ -50,7 +59,7 @@ struct CalendarScheduleRow: View {
         schedule: CoupleSchedule(
             title: "영화 데이트",
             date: Date()
-        )
+        ), onSelect: { }
     )
     .padding(20)
 }

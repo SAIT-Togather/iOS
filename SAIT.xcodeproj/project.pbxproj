@@ -18,6 +18,7 @@
 		D320AD1430A5EC0000AA0A95 /* SAITColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD1330A5EC0000AA0A95 /* SAITColors.swift */; };
 		D37D7703303DE11A006F67A6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D7702303DE11A006F67A6 /* Util.swift */; };
 		D37D770530568D23006F67A6 /* FindIDResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D770430568D23006F67A6 /* FindIDResultViewController.swift */; };
+		D3A2716A30B4737E002B4051 /* CalendarScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2716930B4737E002B4051 /* CalendarScheduleDetailView.swift */; };
 		D3AF165530A88CD90042389E /* CoupleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165430A88CD90042389E /* CoupleSchedule.swift */; };
 		D3AF165730A898A10042389E /* CoupleMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165630A898A10042389E /* CoupleMemory.swift */; };
 		D3AF165A30A89DF60042389E /* SAITCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165930A89DF60042389E /* SAITCard.swift */; };
@@ -60,6 +61,7 @@
 		D320AD1330A5EC0000AA0A95 /* SAITColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAITColors.swift; sourceTree = "<group>"; };
 		D37D7702303DE11A006F67A6 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D37D770430568D23006F67A6 /* FindIDResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDResultViewController.swift; sourceTree = "<group>"; };
+		D3A2716930B4737E002B4051 /* CalendarScheduleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScheduleDetailView.swift; sourceTree = "<group>"; };
 		D3AF165430A88CD90042389E /* CoupleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleSchedule.swift; sourceTree = "<group>"; };
 		D3AF165630A898A10042389E /* CoupleMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleMemory.swift; sourceTree = "<group>"; };
 		D3AF165930A89DF60042389E /* SAITCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAITCard.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				D3AF167730A9B8C40042389E /* CalendarScheduleRow.swift */,
 				D3AF167930A9BBA30042389E /* CalendarScheduleListView.swift */,
 				D3AF167B30A9C5580042389E /* CalendarScheduleAddView.swift */,
+				D3A2716930B4737E002B4051 /* CalendarScheduleDetailView.swift */,
 			);
 			path = CalendarComponents;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				D3AF167630A9B83D0042389E /* CalendarMockData.swift in Sources */,
 				D320AD0730A5E90A00AA0A95 /* MainTabView.swift in Sources */,
 				D320AD0B30A5E94E00AA0A95 /* CalendarView.swift in Sources */,
+				D3A2716A30B4737E002B4051 /* CalendarScheduleDetailView.swift in Sources */,
 				D320AD0D30A5E96400AA0A95 /* MemoryView.swift in Sources */,
 				D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */,
 				D3AF165A30A89DF60042389E /* SAITCard.swift in Sources */,
