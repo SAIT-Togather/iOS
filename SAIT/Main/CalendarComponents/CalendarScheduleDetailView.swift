@@ -17,6 +17,14 @@ struct CalendarScheduleDetailView: View {
     
     let schedule: CoupleSchedule
     
+    let onUpdate: (CoupleSchedule) -> Void
+    
+    @State private var isShowEditSchedule = false
+    
+    let onDelete: (CoupleSchedule) -> Void
+    
+    @State private var isShowingDeleteAlert = false
+    
     // MARK: - Body
     
     var body: some View {
@@ -47,11 +55,33 @@ struct CalendarScheduleDetailView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("수정") {
-                        // TODO: 다음 단계에서 구현
+                        isShowEditSchedule = true
                     }
                     .foregroundStyle(SAITColors.primary)
                 }
             }
+        }
+        .sheet(isPresented: $isShowEditSchedule) {
+            CalendarScheduleAddView(
+                initialDate: schedule.date,
+                editingSchedule: schedule,
+                onSave: { updatedSchedule in
+                    onUpdate(updatedSchedule)
+                    dismiss()
+                }
+            )
+        }
+        .alert(
+            "일정을 삭제할까요?",
+            isPresented: $isShowingDeleteAlert
+        ) {
+            Button("취소", role: .cancel) { }
+            
+            Button("삭제", role: .destructive) {
+                deleteSchedule()
+            }
+        } message: {
+            Text("'\(schedule.title)' 일정을 삭제하면 다시 복구할 수 없어요.")
         }
     }
     
@@ -161,8 +191,8 @@ private extension CalendarScheduleDetailView {
 private extension CalendarScheduleDetailView {
     
     var deleteButton: some View {
-        Button {
-            // TODO: 다음 단계에서 구현
+        Button(role: .destructive) {
+            isShowingDeleteAlert = true
         } label: {
             HStack(spacing: 8) {
                 
@@ -185,11 +215,25 @@ private extension CalendarScheduleDetailView {
     }
 }
 
+// MARK: - Actions
+
+private extension CalendarScheduleDetailView {
+    
+    func deleteSchedule() {
+        onDelete(schedule)
+    }
+    
+}
+
 #Preview {
     CalendarScheduleDetailView(
         schedule: CoupleSchedule(
             title: "주말 영화 데이트",
             date: Date()
-        )
+        ),
+        onUpdate: { _ in },
+        onDelete: { schedule in
+            print("삭제된 일정: \(schedule.title)")
+        }
     )
 }

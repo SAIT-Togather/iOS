@@ -19,6 +19,8 @@ struct CalendarScheduleAddView: View {
     
     let onSave: (CoupleSchedule) -> Void
     
+    let editingSchedule: CoupleSchedule?
+    
     // MARK: - State
     
     @State private var title = ""
@@ -42,18 +44,27 @@ struct CalendarScheduleAddView: View {
     
     init(
         initialDate: Date,
+        editingSchedule: CoupleSchedule? = nil,
         onSave: @escaping (CoupleSchedule) -> Void
     ) {
         self.initialDate = initialDate
+        self.editingSchedule = editingSchedule
         self.onSave = onSave
         
-        let defaultDate = CalendarCalculator.date(
-            bySettingHour: 19,
-            minute: 0,
-            for: initialDate
-        )
-        
-        _scheduleDate = State(initialValue: defaultDate)
+        if let editingSchedule {
+            _title = State(initialValue: editingSchedule.title)
+            _scheduleDate = State(initialValue: editingSchedule.date)
+        } else {
+            _title = State(initialValue: "")
+            
+            let defaultDate = CalendarCalculator.date(
+                bySettingHour: 19,
+                minute: 0,
+                for: initialDate
+            )
+            
+            _scheduleDate = State(initialValue: defaultDate)
+        }
     }
     
     // MARK: - Body
@@ -79,7 +90,9 @@ struct CalendarScheduleAddView: View {
                 }
                 .scrollDismissesKeyboard(.interactively)
             }
-            .navigationTitle("일정 추가")
+            .navigationTitle(
+                editingSchedule == nil ? "일정 추가" : "일정 수정"
+            )
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -232,10 +245,20 @@ private extension CalendarScheduleAddView {
         
         isTitleFocused = false
         
-        let schedule = CoupleSchedule(
-            title: trimmedTitle,
-            date: scheduleDate
-        )
+        let schedule: CoupleSchedule
+        
+        if let editingSchedule {
+            schedule = CoupleSchedule(
+                id: editingSchedule.id,
+                title: trimmedTitle,
+                date: scheduleDate
+            )
+        } else {
+            schedule = CoupleSchedule(
+                title: trimmedTitle,
+                date: scheduleDate
+            )
+        }
         
         onSave(schedule)
         

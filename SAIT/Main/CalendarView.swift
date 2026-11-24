@@ -95,7 +95,13 @@ struct CalendarView: View {
         }
         .sheet(item: $selectedSchedule) { schedule in
             CalendarScheduleDetailView(
-                schedule: schedule
+                schedule: schedule,
+                onUpdate: { updatedSchedule in
+                    updateSchedule(updatedSchedule)
+                },
+                onDelete: { schedule in
+                    deleteSchedule(schedule)
+                }
             )
         }
     }
@@ -123,6 +129,32 @@ private extension CalendarView {
         displayedMonth = CalendarCalculator.startOfMonth(
             for: schedule.date
         )
+    }
+    
+    func updateSchedule(_ updatedSchedule: CoupleSchedule) {
+        guard let index = schedules.firstIndex(where: {
+            $0.id == updatedSchedule.id
+        }) else {
+            return
+        }
+        
+        schedules[index] = updatedSchedule
+        
+        selectedDate = updatedSchedule.date
+        
+        displayedMonth = CalendarCalculator.startOfMonth(
+            for: updatedSchedule.date
+        )
+        
+        selectedSchedule = nil
+    }
+    
+    func deleteSchedule(_ schedule: CoupleSchedule) {
+        schedules.removeAll {
+            $0.id == schedule.id
+        }
+        
+        selectedSchedule = nil
     }
     
 }
