@@ -133,4 +133,29 @@ enum CalendarCalculator {
         ) ?? date
     }
     
+    // MARK: Exist Schedule
+    
+    static func scheduledDates(
+        from schedules: [CoupleSchedule]
+    ) -> Set<Date> {
+        /// Array가 아닌 Set을 사용하는 이유
+        /// - 일정의 존재 여부만 확인하면 되기 때문
+        /// - Set의 contains( )는 평균 O(1)의 시간 복잡도를 가지므로 날짜 셀마다 전체 일정 배열을 탐색하는 것보다 효율적
+        Set(
+            schedules.map {
+                /// Date에는 날짜뿐만 아니라 시간 정보도 포함되어 있기 때문에 날짜의 시작 시각으로 통일하기 위해 startOfDay(for: ) 사용
+                calendar.startOfDay(for: $0.date)
+            }
+        )
+    }
+    
+    static func hasSchedule(
+        on date: Date,
+        in scheduledDates: Set<Date>
+    ) -> Bool {
+        scheduledDates.contains(
+            calendar.startOfDay(for: date)
+        )
+    }
+    
 }

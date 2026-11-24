@@ -31,6 +31,12 @@ struct CalendarView: View {
             }
     }
     
+    private var scheduledDates: Set<Date> {
+        CalendarCalculator.scheduledDates(
+            from: schedules
+        )
+    }
+    
     @State private var isShowingAddSchedule = false
     
     @State private var selectedSchedule: CoupleSchedule?
@@ -67,7 +73,8 @@ struct CalendarView: View {
                         selectedDate: selectedDate,
                         onSelectDate: { date in
                             selectedDate = date
-                        }
+                        },
+                        scheduledDates: scheduledDates
                     )
                     
                     CalendarScheduleListView(

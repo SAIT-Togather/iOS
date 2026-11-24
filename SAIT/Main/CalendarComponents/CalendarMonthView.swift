@@ -22,6 +22,8 @@ struct CalendarMonthView: View {
     let selectedDate: Date
     let onSelectDate: (Date) -> Void
     
+    let scheduledDates: Set<Date>
+    
     // MARK: - Body
     
     var body: some View {
@@ -139,6 +141,12 @@ private extension CalendarMonthView {
                             selectedDate
                         )
                     } ?? false,
+                    hasSchedule: cellDate.map {
+                        CalendarCalculator.hasSchedule(
+                            on: $0,
+                            in: scheduledDates
+                        )
+                    } ?? false,
                     onSelect: {
                         guard let cellDate else { return }
                         onSelectDate(cellDate)
@@ -184,7 +192,10 @@ private struct CalendarMonthPreview: View {
             selectedDate: selectedDate,
             onSelectDate: { date in
                 selectedDate = date
-            }
+            },
+            scheduledDates: CalendarCalculator.scheduledDates(
+                from: CalendarMockData.schedules
+            )
         )
         .padding(20)
         .background(SAITColors.background)
