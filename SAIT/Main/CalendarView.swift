@@ -17,24 +17,13 @@ struct CalendarView: View {
     
     @State private var selectedDate = Date()
     
-    @State private var schedules = CalendarMockData.schedules
+    @EnvironmentObject private var scheduleStore: ScheduleStore
     private var selectedDateSchedules: [CoupleSchedule] {
-        schedules
-            .filter {
-                CalendarCalculator.isSameDay(
-                    $0.date,
-                    selectedDate
-                )
-            }
-            .sorted {
-                $0.date < $1.date
-            }
+        scheduleStore.schedules(on: selectedDate)
     }
     
     private var scheduledDates: Set<Date> {
-        CalendarCalculator.scheduledDates(
-            from: schedules
-        )
+        scheduleStore.scheduledDates
     }
     
     @State private var isShowingAddSchedule = false
@@ -129,7 +118,7 @@ private extension CalendarView {
     }
     
     func addSchedule(_ schedule: CoupleSchedule) {
-        schedules.append(schedule)
+        scheduleStore.addSchedule(schedule)
         
         selectedDate = schedule.date
         
@@ -139,13 +128,7 @@ private extension CalendarView {
     }
     
     func updateSchedule(_ updatedSchedule: CoupleSchedule) {
-        guard let index = schedules.firstIndex(where: {
-            $0.id == updatedSchedule.id
-        }) else {
-            return
-        }
-        
-        schedules[index] = updatedSchedule
+        scheduleStore.updateSchedule(updatedSchedule)
         
         selectedDate = updatedSchedule.date
         
@@ -157,9 +140,7 @@ private extension CalendarView {
     }
     
     func deleteSchedule(_ schedule: CoupleSchedule) {
-        schedules.removeAll {
-            $0.id == schedule.id
-        }
+        scheduleStore.deleteSchedule(schedule)
         
         selectedSchedule = nil
     }
@@ -170,4 +151,9 @@ private extension CalendarView {
 
 #Preview {
     CalendarView()
+        .environmentObject(
+            ScheduleStore(
+                schedules: CalendarMockData.schedules
+            )
+        )
 }

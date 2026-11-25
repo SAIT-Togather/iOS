@@ -19,6 +19,7 @@
 		D37D7703303DE11A006F67A6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D7702303DE11A006F67A6 /* Util.swift */; };
 		D37D770530568D23006F67A6 /* FindIDResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D770430568D23006F67A6 /* FindIDResultViewController.swift */; };
 		D3A2716A30B4737E002B4051 /* CalendarScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2716930B4737E002B4051 /* CalendarScheduleDetailView.swift */; };
+		D3A2716D30B5BA93002B4051 /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2716C30B5BA93002B4051 /* ScheduleStore.swift */; };
 		D3AF165530A88CD90042389E /* CoupleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165430A88CD90042389E /* CoupleSchedule.swift */; };
 		D3AF165730A898A10042389E /* CoupleMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165630A898A10042389E /* CoupleMemory.swift */; };
 		D3AF165A30A89DF60042389E /* SAITCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF165930A89DF60042389E /* SAITCard.swift */; };
@@ -62,6 +63,7 @@
 		D37D7702303DE11A006F67A6 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D37D770430568D23006F67A6 /* FindIDResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDResultViewController.swift; sourceTree = "<group>"; };
 		D3A2716930B4737E002B4051 /* CalendarScheduleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScheduleDetailView.swift; sourceTree = "<group>"; };
+		D3A2716C30B5BA93002B4051 /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStore.swift; sourceTree = "<group>"; };
 		D3AF165430A88CD90042389E /* CoupleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleSchedule.swift; sourceTree = "<group>"; };
 		D3AF165630A898A10042389E /* CoupleMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleMemory.swift; sourceTree = "<group>"; };
 		D3AF165930A89DF60042389E /* SAITCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAITCard.swift; sourceTree = "<group>"; };
@@ -117,8 +119,9 @@
 				D320AD0E30A5E96F00AA0A95 /* PlaceView.swift */,
 				D320AD1030A5E97D00AA0A95 /* MyPageView.swift */,
 				D3AF166630A8A5290042389E /* Helpers */,
-				D3AF166930A8A7A50042389E /* MockData */,
 				D3AF165330A88C360042389E /* Models */,
+				D3A2716B30B5BA33002B4051 /* Stores */,
+				D3AF166930A8A7A50042389E /* MockData */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -138,6 +141,14 @@
 				D320AD0230A0832600AA0A95 /* KeyboardManager.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		D3A2716B30B5BA33002B4051 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				D3A2716C30B5BA93002B4051 /* ScheduleStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 		D3AF165330A88C360042389E /* Models */ = {
@@ -360,6 +371,7 @@
 				D3AF166B30A8A7CD0042389E /* HomeMockData.swift in Sources */,
 				D3AF167030A99A890042389E /* CalendarCalculator.swift in Sources */,
 				D3AF166330A8A3CA0042389E /* RecentMemoriesView.swift in Sources */,
+				D3A2716D30B5BA93002B4051 /* ScheduleStore.swift in Sources */,
 				D320AD1130A5E97D00AA0A95 /* MyPageView.swift in Sources */,
 				D37D7703303DE11A006F67A6 /* Util.swift in Sources */,
 				D3EB36F93001215900182A0E /* SceneDelegate.swift in Sources */,

@@ -11,10 +11,11 @@ import UIKit
 struct HomeView: View {
     
     @State private var relationshipStartDate: Date? = HomeMockData.relationshipStartDate
-    @State private var schedules: [CoupleSchedule] = HomeMockData.schedules
     @State private var memories: [CoupleMemory] = HomeMockData.memories
     
     @State private var currentDate = Date()
+    
+    @EnvironmentObject private var scheduleStore: ScheduleStore
     
     var body: some View {
         ZStack {
@@ -74,6 +75,9 @@ struct HomeView: View {
                 .padding(.bottom, 32)
             }
         }
+        .onAppear {
+            currentDate = Date()
+        }
         .onReceive(
             NotificationCenter.default.publisher(
                 for: UIApplication.significantTimeChangeNotification
@@ -86,6 +90,27 @@ struct HomeView: View {
                 for: UIApplication.didBecomeActiveNotification
             )
         ) { _ in
+            currentDate = Date()
+        }
+        .task (id: nextDateSchedule?.date) {
+            guard let targetDate = nextDateSchedule?.date else {
+                return
+            }
+            
+            let delay = targetDate.timeIntervalSinceNow
+            
+            if delay > 0 {
+                do {
+                    try await Task.sleep(for: .seconds(delay))
+                } catch {
+                    return
+                }
+            }
+            
+            guard !Task.isCancelled else {
+                return
+            }
+            
             currentDate = Date()
         }
     }
@@ -119,16 +144,7 @@ struct HomeView: View {
     // MARK: - 다음 데이트
     
     private var nextDateSchedule: CoupleSchedule? {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: currentDate)
-        
-        return schedules
-            .filter {
-                calendar.startOfDay(for: $0.date) >= today
-            }
-            .min {
-                $0.date < $1.date
-            }
+        scheduleStore.nextSchedule(from: currentDate)
     }
     
     // MARK: - 최근 추억 정렬
@@ -145,6 +161,11 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(
+            ScheduleStore(
+                schedules: CalendarMockData.schedules
+            )
+        )
 }
 
 

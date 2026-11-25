@@ -12,6 +12,10 @@ struct MainTabView: View {
     // 현재 선택된 탭
     @State private var selectedTab: MainTab = .home
     
+    @StateObject private var scheduleStore = ScheduleStore(
+        schedules: CalendarMockData.schedules
+    )
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             
@@ -46,6 +50,7 @@ struct MainTabView: View {
                 .tag(MainTab.myPage)
         }
         .tint(SAITColors.primary)
+        .environmentObject(scheduleStore)
     }
 }
 
