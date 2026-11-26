@@ -11,11 +11,12 @@ import UIKit
 struct HomeView: View {
     
     @State private var relationshipStartDate: Date? = HomeMockData.relationshipStartDate
-    @State private var memories: [CoupleMemory] = HomeMockData.memories
     
     @State private var currentDate = Date()
     
     @EnvironmentObject private var scheduleStore: ScheduleStore
+    
+    @EnvironmentObject private var memoryStore: MemoryStore
     
     var body: some View {
         ZStack {
@@ -151,7 +152,7 @@ struct HomeView: View {
     
     private var recentMemories: [CoupleMemory] {
         Array(
-            memories
+            memoryStore.memories
                 .sorted { $0.date > $1.date }
                 .prefix(3)
         )
@@ -166,6 +167,9 @@ struct HomeView: View {
                 schedules: CalendarMockData.schedules
             )
         )
+        .environmentObject(
+            MemoryStore(
+                memories: MemoryMockData.memories
+            )
+        )
 }
-
-

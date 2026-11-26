@@ -53,14 +53,7 @@ struct RecentMemoriesView: View {
     ) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             
-            Color.clear
-                .aspectRatio(1, contentMode: .fit)
-                .overlay {
-                    Image(memory.imageName)
-                        .resizable()
-                        .scaledToFill()
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+            MemoryThumbnailView(imageName: memory.imageName)
 
             Text(memory.title)
                 .font(.system(size: 12, weight: .medium))

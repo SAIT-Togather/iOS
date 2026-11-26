@@ -8,11 +8,112 @@
 import SwiftUI
 
 struct MemoryView: View {
+    
+    // MARK: - Properties
+    
+    @EnvironmentObject private var memoryStore: MemoryStore
+    
+    @State private var selectedCategory: MemoryCategory? = nil
+    
+    private var filteredMemories: [CoupleMemory] {
+        guard let selectedCategory else {
+            return memoryStore.memories
+        }
+        
+        return memoryStore.memories.filter {
+            $0.category == selectedCategory
+        }
+    }
+    
+    private var monthSections: [MemoryMonthSection] {
+        MemoryCalculator.monthSections(
+            from: filteredMemories
+        )
+    }
+    
+    // MARK: - Body
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            
+            // MARK: - Background
+            
+            SAITColors.background
+                .ignoresSafeArea()
+            
+            // MARK: - Content
+            
+            ScrollView {
+                VStack(spacing: 24) {
+                    
+                    MemoryHeaderView(
+                        onAddMemory: {
+                            // TODO: 추억 추가 시트 연결
+                        }
+                    )
+                    
+                    MemoryCategoryFilterView(
+                        selectedCategory: $selectedCategory
+                    )
+                    
+                    if memoryStore.memories.isEmpty {
+
+                        MemoryEmptyView(
+                            selectedCategory: nil
+                        )
+
+                    } else if filteredMemories.isEmpty {
+
+                        MemoryEmptyView(
+                            selectedCategory: selectedCategory
+                        )
+
+                    } else {
+
+                        LazyVStack(spacing: 24) {
+                            ForEach(monthSections) { section in
+                                MemoryMonthSectionView(
+                                    month: section.month,
+                                    memories: section.memories,
+                                    onToggleLike: { memory in
+                                        memoryStore.toggleLike(
+                                            for: memory
+                                        )
+                                    }
+                                )
+                            }
+                        }
+
+                    }
+                    
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 20)
+                .padding(.top, 16)
+                .padding(.bottom, 32)
+            }
+        }
     }
 }
 
+// MARK: - Preview
+
+//#Preview {
+//    MemoryView()
+//        .environmentObject(
+//            MemoryStore(
+//                memories: MemoryMockData.memories
+//            )
+//        )
+//}
+
 #Preview {
     MemoryView()
+        .environmentObject(
+            MemoryStore(
+                memories: MemoryMockData.memories.filter {
+                    $0.category == .date
+                }
+            )
+        )
 }

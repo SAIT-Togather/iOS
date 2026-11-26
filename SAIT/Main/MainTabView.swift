@@ -16,6 +16,10 @@ struct MainTabView: View {
         schedules: CalendarMockData.schedules
     )
     
+    @StateObject private var memoryStore = MemoryStore(
+        memories: MemoryMockData.memories
+    )
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             
@@ -51,6 +55,7 @@ struct MainTabView: View {
         }
         .tint(SAITColors.primary)
         .environmentObject(scheduleStore)
+        .environmentObject(memoryStore)
     }
 }
 
