@@ -53,7 +53,9 @@ struct RecentMemoriesView: View {
     ) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             
-            MemoryThumbnailView(imageName: memory.imageName)
+            MemoryThumbnailView(
+                photo: memory.representativePhoto
+            )
 
             Text(memory.title)
                 .font(.system(size: 12, weight: .medium))

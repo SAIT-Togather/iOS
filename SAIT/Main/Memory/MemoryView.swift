@@ -15,6 +15,8 @@ struct MemoryView: View {
     
     @State private var selectedCategory: MemoryCategory? = nil
     
+    @State private var isShowingAddMemory = false
+    
     private var filteredMemories: [CoupleMemory] {
         guard let selectedCategory else {
             return memoryStore.memories
@@ -48,7 +50,7 @@ struct MemoryView: View {
                     
                     MemoryHeaderView(
                         onAddMemory: {
-                            // TODO: 추억 추가 시트 연결
+                            isShowingAddMemory = true
                         }
                     )
                     
@@ -93,27 +95,31 @@ struct MemoryView: View {
                 .padding(.bottom, 32)
             }
         }
+        .sheet(isPresented: $isShowingAddMemory) {
+            MemoryAddView()
+        }
     }
+    
 }
 
 // MARK: - Preview
-
-//#Preview {
-//    MemoryView()
-//        .environmentObject(
-//            MemoryStore(
-//                memories: MemoryMockData.memories
-//            )
-//        )
-//}
 
 #Preview {
     MemoryView()
         .environmentObject(
             MemoryStore(
-                memories: MemoryMockData.memories.filter {
-                    $0.category == .date
-                }
+                memories: MemoryMockData.memories
             )
         )
 }
+
+//#Preview {
+//    MemoryView()
+//        .environmentObject(
+//            MemoryStore(
+//                memories: MemoryMockData.memories.filter {
+//                    $0.category == .date
+//                }
+//            )
+//        )
+//}

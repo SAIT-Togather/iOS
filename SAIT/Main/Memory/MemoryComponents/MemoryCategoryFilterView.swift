@@ -13,16 +13,19 @@ struct MemoryCategoryFilterView: View {
     
     @Binding var selectedCategory: MemoryCategory?
     
+    var showsAllCategory: Bool = true
+    
     // MARK: - Body
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                
-                categoryButton(
-                    title: "전체",
-                    category: nil
-                )
+                if showsAllCategory {
+                    categoryButton(
+                        title: "전체",
+                        category: nil
+                    )
+                }
                 
                 ForEach(MemoryCategory.allCases) { category in
                     categoryButton(
@@ -33,6 +36,7 @@ struct MemoryCategoryFilterView: View {
             }
         }
     }
+    
 }
 
 // MARK: - Components

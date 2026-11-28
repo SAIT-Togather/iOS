@@ -22,7 +22,7 @@ struct MemoryCardView: View {
             // MARK: - Thumbnail
             
             MemoryThumbnailView(
-                imageName: memory.imageName
+                photo: memory.representativePhoto
             )
             
             // MARK: - Information
@@ -86,8 +86,10 @@ private struct MemoryCardPreview: View {
     @State private var memory = CoupleMemory(
         title: "함께한 첫 여행",
         date: Date(),
-        imageName: "memory_sample_1",
-        category: .travel
+        photos: [
+            MemoryPhoto(source: .asset(name: "memory_sample_1"))
+        ],
+        category: .travel,
     )
 
     var body: some View {

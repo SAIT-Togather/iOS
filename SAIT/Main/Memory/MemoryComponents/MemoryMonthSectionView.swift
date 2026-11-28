@@ -67,19 +67,25 @@ private struct MemoryMonthSectionPreview: View {
         CoupleMemory(
             title: "바다 여행",
             date: Date(),
-            imageName: "memory_sample_1",
+            photos: [
+                MemoryPhoto(source: .asset(name: "memory_sample_1"))
+            ],
             category: .travel
         ),
         CoupleMemory(
             title: "카페 데이트",
             date: Date(),
-            imageName: "memory_sample_1",
+            photos: [
+                MemoryPhoto(source: .asset(name: "memory_sample_1"))
+            ],
             category: .date
         ),
         CoupleMemory(
             title: "우리의 기념일",
             date: Date(),
-            imageName: "memory_sample_1",
+            photos: [
+                MemoryPhoto(source: .asset(name: "memory_sample_1"))
+            ],
             category: .anniversary
         )
     ]

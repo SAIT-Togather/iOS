@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D312886230BAACB8003A51A0 /* MemoryAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886130BAACB8003A51A0 /* MemoryAddView.swift */; };
+		D312886430BAC3C4003A51A0 /* MemorySelectedPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886330BAC3C4003A51A0 /* MemorySelectedPhotoView.swift */; };
+		D312886630BADDD1003A51A0 /* MemoryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886530BADDD1003A51A0 /* MemoryPhoto.swift */; };
+		D312886E30BAFA3A003A51A0 /* MemoryPhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886D30BAFA3A003A51A0 /* MemoryPhotoLoader.swift */; };
 		D320AD0130975E7700AA0A95 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */; };
 		D320AD0330A0832600AA0A95 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0230A0832600AA0A95 /* KeyboardManager.swift */; };
 		D320AD0730A5E90A00AA0A95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0630A5E90A00AA0A95 /* MainTabView.swift */; };
@@ -62,6 +66,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D312886130BAACB8003A51A0 /* MemoryAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryAddView.swift; sourceTree = "<group>"; };
+		D312886330BAC3C4003A51A0 /* MemorySelectedPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySelectedPhotoView.swift; sourceTree = "<group>"; };
+		D312886530BADDD1003A51A0 /* MemoryPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPhoto.swift; sourceTree = "<group>"; };
+		D312886D30BAFA3A003A51A0 /* MemoryPhotoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPhotoLoader.swift; sourceTree = "<group>"; };
 		D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D320AD0230A0832600AA0A95 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		D320AD0630A5E90A00AA0A95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -129,18 +137,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D312886730BAF936003A51A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D312886D30BAFA3A003A51A0 /* MemoryPhotoLoader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D312886830BAF94C003A51A0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D320AD0830A5E93F00AA0A95 /* HomeView.swift */,
+				D3AF165B30A8A00D0042389E /* HomeComponents */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D312886930BAF96C003A51A0 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				D320AD0A30A5E94E00AA0A95 /* CalendarView.swift */,
+				D3AF166C30A995FE0042389E /* CalendarComponents */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		D312886A30BAF9A6003A51A0 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				D320AD0C30A5E96400AA0A95 /* MemoryView.swift */,
+				D32F6B9630B7248700F58797 /* MemoryComponents */,
+				D312886730BAF936003A51A0 /* Services */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		D312886B30BAF9D2003A51A0 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				D320AD0E30A5E96F00AA0A95 /* PlaceView.swift */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		D312886C30BAF9DA003A51A0 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				D320AD1030A5E97D00AA0A95 /* MyPageView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		D320AD0430A5E89B00AA0A95 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				D320AD0630A5E90A00AA0A95 /* MainTabView.swift */,
-				D320AD0830A5E93F00AA0A95 /* HomeView.swift */,
-				D3AF165B30A8A00D0042389E /* HomeComponents */,
-				D320AD0A30A5E94E00AA0A95 /* CalendarView.swift */,
-				D3AF166C30A995FE0042389E /* CalendarComponents */,
-				D320AD0C30A5E96400AA0A95 /* MemoryView.swift */,
-				D32F6B9630B7248700F58797 /* MemoryComponents */,
-				D320AD0E30A5E96F00AA0A95 /* PlaceView.swift */,
-				D320AD1030A5E97D00AA0A95 /* MyPageView.swift */,
+				D312886830BAF94C003A51A0 /* Home */,
+				D312886930BAF96C003A51A0 /* Calendar */,
+				D312886A30BAF9A6003A51A0 /* Memory */,
+				D312886B30BAF9D2003A51A0 /* Place */,
+				D312886C30BAF9DA003A51A0 /* MyPage */,
 				D3AF166630A8A5290042389E /* Helpers */,
 				D3AF165330A88C360042389E /* Models */,
 				D3A2716B30B5BA33002B4051 /* Stores */,
@@ -166,6 +223,8 @@
 				D32F6B9F30B86A7900F58797 /* MemoryCardView.swift */,
 				D32F6BA130B86FF900F58797 /* MemoryMonthSectionView.swift */,
 				D32F6BAB30B8812C00F58797 /* MemoryEmptyView.swift */,
+				D312886130BAACB8003A51A0 /* MemoryAddView.swift */,
+				D312886330BAC3C4003A51A0 /* MemorySelectedPhotoView.swift */,
 			);
 			path = MemoryComponents;
 			sourceTree = "<group>";
@@ -195,6 +254,7 @@
 				D3AF165630A898A10042389E /* CoupleMemory.swift */,
 				D32F6B9930B7298D00F58797 /* MemoryCategory.swift */,
 				D32F6BA330B8734B00F58797 /* MemoryMonthSection.swift */,
+				D312886530BADDD1003A51A0 /* MemoryPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -412,11 +472,14 @@
 				D320AD0730A5E90A00AA0A95 /* MainTabView.swift in Sources */,
 				D320AD0B30A5E94E00AA0A95 /* CalendarView.swift in Sources */,
 				D3A2716A30B4737E002B4051 /* CalendarScheduleDetailView.swift in Sources */,
+				D312886E30BAFA3A003A51A0 /* MemoryPhotoLoader.swift in Sources */,
+				D312886230BAACB8003A51A0 /* MemoryAddView.swift in Sources */,
 				D320AD0D30A5E96400AA0A95 /* MemoryView.swift in Sources */,
 				D3EB36F83001215900182A0E /* AppDelegate.swift in Sources */,
 				D3AF165A30A89DF60042389E /* SAITCard.swift in Sources */,
 				D32F6BA830B879E200F58797 /* MemoryMockData.swift in Sources */,
 				D3AF166530A8A4780042389E /* HomeHeaderView.swift in Sources */,
+				D312886630BADDD1003A51A0 /* MemoryPhoto.swift in Sources */,
 				D3AF166B30A8A7CD0042389E /* HomeMockData.swift in Sources */,
 				D3AF167030A99A890042389E /* CalendarCalculator.swift in Sources */,
 				D3AF166330A8A3CA0042389E /* RecentMemoriesView.swift in Sources */,
@@ -432,6 +495,7 @@
 				D3EB370530013A5A00182A0E /* SignUpViewController.swift in Sources */,
 				D32F6BAA30B87B2800F58797 /* MemoryStore.swift in Sources */,
 				D32F6B9E30B8688500F58797 /* MemoryThumbnailView.swift in Sources */,
+				D312886430BAC3C4003A51A0 /* MemorySelectedPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
