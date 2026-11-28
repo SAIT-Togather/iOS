@@ -8,7 +8,15 @@
 import SwiftUI
 import PhotosUI
 
+private enum MemoryPhotoSaveError: Error {
+    case loadedPhotoCountMismatch
+}
+
 struct MemoryAddView: View {
+    
+    // MARK: - Properties
+    
+    let editingMemory: CoupleMemory?
     
     // MARK: - Environment
     
@@ -22,14 +30,37 @@ struct MemoryAddView: View {
     @State private var memoryDate = Date()
     @State private var selectedCategory: MemoryCategory? = nil
     @State private var selectedPhotoItems: [PhotosPickerItem] = []
+    @State private var editingPhotos: [MemoryEditingPhoto] = []
     
     @State private var isSaving = false
     @State private var isShowingSaveError = false
     @State private var saveTask: Task<Void, Never>?
     
+    // MARK: - Initialization
+    
+    init(editingMemory: CoupleMemory? = nil) {
+        self.editingMemory = editingMemory
+
+        _title = State(initialValue: editingMemory?.title ?? "")
+        _memoryDate = State(initialValue: editingMemory?.date ?? Date())
+        _selectedCategory = State(initialValue: editingMemory?.category)
+        
+        _editingPhotos = State(
+            initialValue: (editingMemory?.photos ?? []).map{
+                MemoryEditingPhoto(existing: $0)
+            }
+        )
+    }
+        
     // MARK: - Focus
     
     @FocusState private var isTitleFocused: Bool
+    
+    // MARK: - Navigation
+    
+    private var navigationTitle: String {
+        editingMemory == nil ? "추억 추가" : "추억 수정"
+    }
     
     // MARK: - Validation
     
@@ -40,10 +71,10 @@ struct MemoryAddView: View {
     private var isFormValid: Bool {
         !trimmedTitle.isEmpty
             && selectedCategory != nil
-            && !selectedPhotoItems.isEmpty
+            && !editingPhotos.isEmpty
     }
     
-    // MARK: Save Availability
+    // MARK: - Save Availability
     
     private var canSave: Bool {
         isFormValid && !isSaving
@@ -75,7 +106,7 @@ struct MemoryAddView: View {
                 .disabled(isSaving)
                 .scrollDismissesKeyboard(.interactively)
             }
-            .navigationTitle("추억 추가")
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 
@@ -108,7 +139,7 @@ struct MemoryAddView: View {
         ) {
             Button("확인", role: .cancel) {}
         } message: {
-            Text("사진을 불러오는 중 문제가 발생했어요. 다시 시도해 주세요.")
+            Text("추억을 저장하는 중 문제가 발생했어요. 다시 시도해 주세요.")
         }
         .onDisappear {
             saveTask?.cancel()
@@ -198,9 +229,9 @@ private extension MemoryAddView {
                         .foregroundStyle(SAITColors.primary)
                     
                     Text(
-                        selectedPhotoItems.isEmpty
+                        editingPhotos.isEmpty
                             ? "사진 선택"
-                            : "사진 \(selectedPhotoItems.count)장 선택됨"
+                            : "사진 \(editingPhotos.count)장 선택됨"
                     )
                     .font(.system(size: 15))
                     .foregroundStyle(SAITColors.primaryText)
@@ -220,19 +251,22 @@ private extension MemoryAddView {
                 }
             }
             .buttonStyle(.plain)
-            if !selectedPhotoItems.isEmpty {
+            .onChange(of: selectedPhotoItems) { items in
+                appendSelectedPhotos(items)
+            }
+            if !editingPhotos.isEmpty {
                 
                 Text("첫 번째 사진이 홈과 추억 목록에 표시돼요. 사진을 길게 눌러 대표 사진을 변경할 수 있어요.")
                     .font(.system(size: 12))
                     .foregroundStyle(SAITColors.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                selectedPhotosGrid
+                editingPhotosGrid
             }
         }
     }
     
-    var selectedPhotosGrid: some View {
+    var editingPhotosGrid: some View {
         LazyVGrid(
             columns: [
                 GridItem(.flexible(), spacing: 8),
@@ -241,25 +275,25 @@ private extension MemoryAddView {
             ],
             spacing: 8
         ) {
-            ForEach(
-                Array(selectedPhotoItems.enumerated()),
-                id: \.element
-            ) { index, item in
-                MemorySelectedPhotoView(
-                    item: item,
-                    isRepresentative: index == 0
+            ForEach(editingPhotos) { photo in
+                MemoryEditingPhotoView(
+                    photo: photo,
+                    isRepresentative: editingPhotos.first?.id == photo.id
                 )
                 .contextMenu {
-                    if index != 0 {
+                    if editingPhotos.first?.id != photo.id {
                         Button {
-                            setRepresentativePhoto(item)
+                            setRepresentativeEditingPhoto(photo)
                         } label: {
-                            Label("대표 사진으로 지정", systemImage: "star")
+                            Label(
+                                "대표 사진으로 지정",
+                                systemImage: "star"
+                            )
                         }
                     }
                 }
                 .overlay(alignment: .topTrailing) {
-                    removePhotoButton(for: item)
+                    removeEditingPhotoButton(for: photo)
                 }
             }
         }
@@ -277,11 +311,11 @@ private extension MemoryAddView {
 
 private extension MemoryAddView {
     
-    func removePhotoButton(
-        for item: PhotosPickerItem
+    func removeEditingPhotoButton(
+        for photo: MemoryEditingPhoto
     ) -> some View {
         Button {
-            removePhoto(item)
+            removeEditingPhoto(photo)
         } label: {
             Image(systemName: "xmark")
                 .font(.system(size: 10, weight: .bold))
@@ -302,20 +336,6 @@ private extension MemoryAddView {
 
 private extension MemoryAddView {
     
-    func removePhoto(_ item: PhotosPickerItem) {
-        selectedPhotoItems.removeAll() { $0 == item }
-    }
-    
-    func setRepresentativePhoto(_ item: PhotosPickerItem) {
-        guard let index = selectedPhotoItems.firstIndex(of: item),
-              index != 0 else {
-            return
-        }
-        
-        let selectedItem = selectedPhotoItems.remove(at: index)
-        selectedPhotoItems.insert(selectedItem, at: 0)
-    }
-    
     @MainActor
     func saveMemory() {
         guard canSave else {
@@ -326,8 +346,8 @@ private extension MemoryAddView {
         let savedTitle = trimmedTitle
         let savedDate = memoryDate
         let savedCategory = selectedCategory
-        let savedPhotoItems = selectedPhotoItems
-
+        let savedEditingPhotos = editingPhotos
+        
         isSaving = true
         isTitleFocused = false
 
@@ -338,23 +358,38 @@ private extension MemoryAddView {
             }
 
             do {
-                let loader = MemoryPhotoLoader()
-
-                let photos = try await loader.load(
-                    items: savedPhotoItems
+                let photos = try await preparePhotosForSave(
+                    from: savedEditingPhotos
                 )
 
                 try Task.checkCancellation()
-
-                let memory = CoupleMemory(
-                    title: savedTitle,
-                    date: savedDate,
-                    photos: photos,
-                    category: savedCategory
-                )
-
-                memoryStore.addMemory(memory)
-
+                
+                if let editingMemory {
+                    guard var updatedMemory = memoryStore.memories.first(
+                        where: { $0.id == editingMemory.id }
+                    ) else {
+                        isShowingSaveError = true
+                        return
+                    }
+                    
+                    updatedMemory.title = savedTitle
+                    updatedMemory.date = savedDate
+                    updatedMemory.photos = photos
+                    updatedMemory.category = savedCategory
+                    
+                    memoryStore.updateMemory(updatedMemory)
+                    
+                } else {
+                    let memory = CoupleMemory(
+                        title: savedTitle,
+                        date: savedDate,
+                        photos: photos,
+                        category: savedCategory
+                    )
+                    
+                    memoryStore.addMemory(memory)
+                }
+                
                 dismiss()
 
             } catch is CancellationError {
@@ -368,6 +403,99 @@ private extension MemoryAddView {
                 isShowingSaveError = true
             }
         }
+    }
+    
+    func removeEditingPhoto(_ photo: MemoryEditingPhoto) {
+        editingPhotos.removeAll() {
+            $0.id == photo.id
+        }
+    }
+    
+    func setRepresentativeEditingPhoto(_ photo: MemoryEditingPhoto) {
+        guard let index = editingPhotos.firstIndex(
+            where: { $0.id == photo.id }
+        ), index != 0 else {
+            return
+        }
+        
+        let selectedPhoto = editingPhotos.remove(at: index)
+        editingPhotos.insert(selectedPhoto, at: 0)
+    }
+    
+    func appendSelectedPhotos(_ items: [PhotosPickerItem]) {
+        guard !items.isEmpty else {
+            return
+        }
+        
+        for item in items {
+            let alreadyExists = editingPhotos.contains { photo in
+                guard case . selected(let selectedItem) = photo.source else {
+                    return false
+                }
+                
+                return selectedItem == item
+            }
+            
+            if !alreadyExists {
+                editingPhotos.append(
+                    MemoryEditingPhoto(selected: item)
+                )
+            }
+        }
+        
+        selectedPhotoItems = []
+    }
+    
+    @MainActor
+    func preparePhotosForSave(
+        from editingPhotos: [MemoryEditingPhoto]
+    ) async throws -> [MemoryPhoto] {
+        let selectedItems = editingPhotos.compactMap {
+            photo -> PhotosPickerItem? in
+            
+            guard case .selected(let item) = photo.source else {
+                return nil
+            }
+            
+            return item
+        }
+        
+        let loadedPhotos: [MemoryPhoto]
+        
+        if selectedItems.isEmpty {
+            loadedPhotos = []
+        } else {
+            let loader = MemoryPhotoLoader()
+            loadedPhotos = try await loader.load(items: selectedItems)
+        }
+        
+        try Task.checkCancellation()
+        
+        guard loadedPhotos.count == selectedItems.count else {
+            throw MemoryPhotoSaveError.loadedPhotoCountMismatch
+        }
+        
+        var loadedIterator = loadedPhotos.makeIterator()
+        var result: [MemoryPhoto] = []
+        result.reserveCapacity(editingPhotos.count)
+        
+        for photo in editingPhotos {
+            try Task.checkCancellation()
+            
+            switch photo.source {
+            case .existing(let existingPhoto):
+                result.append(existingPhoto)
+                
+            case .selected:
+                guard let loadedPhoto = loadedIterator.next() else {
+                    throw MemoryPhotoSaveError.loadedPhotoCountMismatch
+                }
+                
+                result.append(loadedPhoto)
+            }
+        }
+        
+        return result
     }
     
 }

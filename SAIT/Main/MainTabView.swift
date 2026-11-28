@@ -35,7 +35,11 @@ struct MainTabView: View {
                 }
                 .tag(MainTab.memory)
             
-            HomeView()
+            HomeView(
+                onShowMemories: {
+                    selectedTab = .memory
+                }
+            )
                 .tabItem {
                     Label("홈", systemImage: "house.fill")
                 }

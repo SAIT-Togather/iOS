@@ -11,6 +11,9 @@
 		D312886430BAC3C4003A51A0 /* MemorySelectedPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886330BAC3C4003A51A0 /* MemorySelectedPhotoView.swift */; };
 		D312886630BADDD1003A51A0 /* MemoryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886530BADDD1003A51A0 /* MemoryPhoto.swift */; };
 		D312886E30BAFA3A003A51A0 /* MemoryPhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886D30BAFA3A003A51A0 /* MemoryPhotoLoader.swift */; };
+		D312887030BB07B3003A51A0 /* MemoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312886F30BB07B3003A51A0 /* MemoryDetailView.swift */; };
+		D312887230BB2044003A51A0 /* MemoryEditingPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312887130BB2044003A51A0 /* MemoryEditingPhoto.swift */; };
+		D312887430BB2211003A51A0 /* MemoryEditingPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312887330BB2211003A51A0 /* MemoryEditingPhotoView.swift */; };
 		D320AD0130975E7700AA0A95 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */; };
 		D320AD0330A0832600AA0A95 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0230A0832600AA0A95 /* KeyboardManager.swift */; };
 		D320AD0730A5E90A00AA0A95 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320AD0630A5E90A00AA0A95 /* MainTabView.swift */; };
@@ -70,6 +73,9 @@
 		D312886330BAC3C4003A51A0 /* MemorySelectedPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySelectedPhotoView.swift; sourceTree = "<group>"; };
 		D312886530BADDD1003A51A0 /* MemoryPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPhoto.swift; sourceTree = "<group>"; };
 		D312886D30BAFA3A003A51A0 /* MemoryPhotoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPhotoLoader.swift; sourceTree = "<group>"; };
+		D312886F30BB07B3003A51A0 /* MemoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailView.swift; sourceTree = "<group>"; };
+		D312887130BB2044003A51A0 /* MemoryEditingPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryEditingPhoto.swift; sourceTree = "<group>"; };
+		D312887330BB2211003A51A0 /* MemoryEditingPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryEditingPhotoView.swift; sourceTree = "<group>"; };
 		D320AD0030975E7700AA0A95 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D320AD0230A0832600AA0A95 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		D320AD0630A5E90A00AA0A95 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -225,6 +231,8 @@
 				D32F6BAB30B8812C00F58797 /* MemoryEmptyView.swift */,
 				D312886130BAACB8003A51A0 /* MemoryAddView.swift */,
 				D312886330BAC3C4003A51A0 /* MemorySelectedPhotoView.swift */,
+				D312886F30BB07B3003A51A0 /* MemoryDetailView.swift */,
+				D312887330BB2211003A51A0 /* MemoryEditingPhotoView.swift */,
 			);
 			path = MemoryComponents;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 				D32F6B9930B7298D00F58797 /* MemoryCategory.swift */,
 				D32F6BA330B8734B00F58797 /* MemoryMonthSection.swift */,
 				D312886530BADDD1003A51A0 /* MemoryPhoto.swift */,
+				D312887130BB2044003A51A0 /* MemoryEditingPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,6 +459,7 @@
 				D32F6BAC30B8812C00F58797 /* MemoryEmptyView.swift in Sources */,
 				D3AF165730A898A10042389E /* CoupleMemory.swift in Sources */,
 				D32F6B9830B7255600F58797 /* MemoryHeaderView.swift in Sources */,
+				D312887230BB2044003A51A0 /* MemoryEditingPhoto.swift in Sources */,
 				D3AF167430A9A50D0042389E /* CalendarDayCell.swift in Sources */,
 				D3AF166130A8A32C0042389E /* NextDateCardView.swift in Sources */,
 				D3AF166830A8A5590042389E /* DateCalculator.swift in Sources */,
@@ -460,6 +470,7 @@
 				D320AD0330A0832600AA0A95 /* KeyboardManager.swift in Sources */,
 				D320AD1430A5EC0000AA0A95 /* SAITColors.swift in Sources */,
 				D3AF165D30A8A0890042389E /* CoupleCardView.swift in Sources */,
+				D312887030BB07B3003A51A0 /* MemoryDetailView.swift in Sources */,
 				D32F6BA230B86FF900F58797 /* MemoryMonthSectionView.swift in Sources */,
 				D3AF167230A99CFF0042389E /* CalendarMonthView.swift in Sources */,
 				D3AF166E30A996490042389E /* CalendarHeaderView.swift in Sources */,
@@ -495,6 +506,7 @@
 				D3EB370530013A5A00182A0E /* SignUpViewController.swift in Sources */,
 				D32F6BAA30B87B2800F58797 /* MemoryStore.swift in Sources */,
 				D32F6B9E30B8688500F58797 /* MemoryThumbnailView.swift in Sources */,
+				D312887430BB2211003A51A0 /* MemoryEditingPhotoView.swift in Sources */,
 				D312886430BAC3C4003A51A0 /* MemorySelectedPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

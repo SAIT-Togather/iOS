@@ -14,6 +14,7 @@ struct MemoryMonthSectionView: View {
     let month: Date
     let memories: [CoupleMemory]
     let onToggleLike: (CoupleMemory) -> Void
+    let onSelectMemory: (CoupleMemory) -> Void
     
     private let columns = [
         GridItem(.flexible(), spacing: 12, alignment: .top),
@@ -49,6 +50,9 @@ struct MemoryMonthSectionView: View {
                         memory: memory,
                         onToggleLike: {
                             onToggleLike(memory)
+                        },
+                        onSelect: {
+                            onSelectMemory(memory)
                         }
                     )
                 }
@@ -103,6 +107,9 @@ private struct MemoryMonthSectionPreview: View {
                     }
 
                     memories[index].isLiked.toggle()
+                },
+                onSelectMemory: { memory in
+                    print("선택한 추억: \(memory.title)")
                 }
             )
             .padding(.horizontal, 20)

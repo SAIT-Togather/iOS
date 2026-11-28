@@ -17,6 +17,8 @@ struct MemoryView: View {
     
     @State private var isShowingAddMemory = false
     
+    @State private var selectedMemory: CoupleMemory?
+    
     private var filteredMemories: [CoupleMemory] {
         guard let selectedCategory else {
             return memoryStore.memories
@@ -81,6 +83,9 @@ struct MemoryView: View {
                                         memoryStore.toggleLike(
                                             for: memory
                                         )
+                                    },
+                                    onSelectMemory: { memory in
+                                        selectedMemory = memory
                                     }
                                 )
                             }
@@ -97,6 +102,15 @@ struct MemoryView: View {
         }
         .sheet(isPresented: $isShowingAddMemory) {
             MemoryAddView()
+        }
+        .sheet(item: $selectedMemory) { memory in
+            MemoryDetailView(
+                memory: memory,
+                onDelete: { memory in
+                    memoryStore.deleteMemory(memory)
+                    selectedMemory = nil
+                }
+            )
         }
     }
     

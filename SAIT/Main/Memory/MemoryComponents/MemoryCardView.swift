@@ -13,6 +13,7 @@ struct MemoryCardView: View {
     
     let memory: CoupleMemory
     let onToggleLike: () -> Void
+    let onSelect: () -> Void
     
     // MARK: - Body
     
@@ -21,35 +22,48 @@ struct MemoryCardView: View {
             
             // MARK: - Thumbnail
             
-            MemoryThumbnailView(
-                photo: memory.representativePhoto
-            )
+            Button(action: onSelect) {
+                MemoryThumbnailView(
+                    photo: memory.representativePhoto
+                )
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("\(memory.title) 추억 상세 보기")
             
             // MARK: - Information
             
             HStack(alignment: .top, spacing: 8) {
                 
-                VStack(alignment: .leading, spacing: 6) {
-                    
-                    Text(memory.title)
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundStyle(SAITColors.primaryText)
-                        .lineLimit(1)
-                    
-                    Text(
-                        memory.date.formatted(
-                            .dateTime
-                                .year()
-                                .month(.twoDigits)
-                                .day(.twoDigits)
+                Button(action: onSelect) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        
+                        Text(memory.title)
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundStyle(SAITColors.primaryText)
+                            .lineLimit(1)
+                        
+                        Text(
+                            memory.date.formatted(
+                                .dateTime
+                                    .year()
+                                    .month(.twoDigits)
+                                    .day(.twoDigits)
+                            )
                         )
+                        .font(.system(size: 10))
+                        .foregroundStyle(SAITColors.secondaryText)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                    }
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: 44,
+                        alignment: .topLeading
                     )
-                    .font(.system(size: 10))
-                    .foregroundStyle(SAITColors.secondaryText)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
+                    .contentShape(Rectangle())
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .buttonStyle(.plain)
                 
                 // MARK: - Like Button
                 
@@ -97,6 +111,9 @@ private struct MemoryCardPreview: View {
             memory: memory,
             onToggleLike: {
                 memory.isLiked.toggle()
+            },
+            onSelect: {
+                print("추억 선택: \(memory.title)")
             }
         )
         .frame(width: 160)

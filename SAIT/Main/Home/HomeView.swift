@@ -10,6 +10,9 @@ import UIKit
 
 struct HomeView: View {
     
+    // MARK: - Actions
+    let onShowMemories: () -> Void
+    
     @State private var relationshipStartDate: Date? = HomeMockData.relationshipStartDate
     
     @State private var currentDate = Date()
@@ -67,7 +70,7 @@ struct HomeView: View {
                     // MARK: - Recent Memories
                     
                     RecentMemoriesView(memories: recentMemories) {
-                        // TODO: 추억 탭으로 이동
+                        onShowMemories()
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -161,7 +164,11 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(
+        onShowMemories: {
+            print("추억 탭 이동 요청")
+        }
+    )
         .environmentObject(
             ScheduleStore(
                 schedules: CalendarMockData.schedules
